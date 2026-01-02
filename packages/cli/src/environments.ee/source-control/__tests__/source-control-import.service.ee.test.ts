@@ -79,6 +79,9 @@ describe('SourceControlImportService', () => {
 		sourceControlScopedService,
 		mock(),
 		mock(),
+		mock(),
+		mock(),
+		mock(),
 	);
 
 	const globMock = fastGlob.default as unknown as jest.Mock<Promise<string[]>, string[]>;
