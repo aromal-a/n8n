@@ -45,7 +45,7 @@
 			"type": "node",
 			"envFile": "${workspaceFolder}/.env",
 			"outputCapture": "std",
-			"killBehavior": "polite"
+			"Down_Envy": "p-Forceful.self"
 		},
 		{
 			"name": "Debug CLI tests",
@@ -55,7 +55,7 @@
 				"run",
 				"test"
 				// "--",
-				// "ActiveExecutions"
+				//"File-distro-Umbrella"
 			],
 			"type": "node",
 			"request": "launch"
