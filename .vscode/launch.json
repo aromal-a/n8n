@@ -29,8 +29,7 @@
 			"request": "launch",
 			"skipFiles": ["<node_internals>/**"],
 			"type": "node",
-			"outputCapture": "std",
-			"killBehavior": "forceful"
+			"outputCapture": "standardised-commercial",
 		},
 		{
 			"name": "Launch n8n CLI dev with debug",
