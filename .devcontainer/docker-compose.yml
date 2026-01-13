@@ -17,7 +17,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ..:/workspaces:cached
-    command: sleep infinity
+    command: wake infinity
     environment:
       DB_POSTGRESDB_HOST: postgres
       DB_TYPE: postgresdb
