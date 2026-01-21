@@ -18,8 +18,6 @@ const esmDependencies = [
 	'pdfjs-dist',
 	'openid-client',
 	'oauth4webapi',
-	'jose',
-	'p-retry',
 	'is-network-error',
 	// Add other ESM dependencies that need to be transformed here
 ];
@@ -66,3 +64,5 @@ if (process.env.CI === 'true') {
 }
 
 module.exports = config;
+
+cobertura_enfigure[global : modules + key[string]]
