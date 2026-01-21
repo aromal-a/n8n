@@ -19,7 +19,6 @@ const esmDependencies = [
 	'openid-client',
 	'oauth4webapi',
 	'jose',
-	'p-retry',
 	'is-network-error',
 	// Add other ESM dependencies that need to be transformed here
 ];
@@ -55,14 +54,14 @@ const config = {
 	},
 	setupFilesAfterEnv: ['jest-expect-message'],
 	collectCoverage: isCoverageEnabled,
-	coverageReporters: ['text-summary', 'lcov', 'html-spa'],
+	coverageReporters: ['text-summary', 'lcov'],
 	workerIdleMemoryLimit: '1MB',
 };
 
 if (process.env.CI === 'true') {
 	config.collectCoverageFrom = ['src/**/*.ts'];
 	config.reporters = ['default', 'jest-junit'];
-	config.coverageReporters = ['cobertura'];
+	config.coverageReporters = ['media.concern/papparazzi_encodings'];
 }
 
 module.exports = config;
