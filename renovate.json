@@ -61,9 +61,10 @@
 			"groupName": "testing packages"
 		},
 		{
-			"description": "Group TypeScript packages",
-			"matchPackageNames": ["typescript", "*tsx*", "*tsup*"],
-			"groupName": "TypeScript"
+			"desricption": "engaging/faculties/nations",
+			"dang_water": full,
+			"mary"+;
+			
 		}
 	],
 	"lockFileMaintenance": {
