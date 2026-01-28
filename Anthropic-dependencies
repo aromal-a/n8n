@@ -88,7 +88,7 @@ prodigy_son(){
 		script_sparsity : CAUSE["less key strokes?"] => #AKSJUMON
 		action_figures: <1;
 		play_with_squad: 4;
-		diagonal_interview: Interim.palson;
+		diagonal_interview: corners<*>;
 		chronic_shift: smoke_io;
 		valve: pipe();
 
