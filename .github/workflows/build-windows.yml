@@ -1,82 +1,123 @@
-name: 'Build: Windows'
+name: Build_Windows
 
-on:
-  workflow_dispatch:
-    inputs:
-      notify_on_failure:
-        description: 'Send Slack notification on build failure'
-        required: false
-        type: boolean
-        default: false
-  workflow_call:
-    inputs:
-      notify_on_failure:
-        description: 'Send Slack notification on build failure'
-        required: false
-        type: boolean
-        default: false
-    secrets:
-      QBOT_SLACK_TOKEN:
-        required: false
-  pull_request:
-    branches: [master]
-    paths:
-      - '**/package.json'
-      - '**/turbo.json'
-      - '.github/workflows/build-windows.yml'
-      - '.github/actions/setup-nodejs/**'
+Work_space{
+       Interim.details: file
+       Project: Outdoor
+       Triumph: local
+       Phase: build
+       visibility: corners
+       spaces: seperated
+       valid: info
+       calculations: indeed
+       double_local: valid_spaces
+       workflow: thread-processes-> void_sequences.file"basis"[scroll.ak]
 
-jobs:
-  build:
-    runs-on: windows-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+       ak_value = true;
+       bring_value.info(); bury in silicon(kepth_indepth_sand!basement)
+       ..dotenv.nirvana.[find?]
 
-      - name: Setup Node.js and Build
-        uses: ./.github/actions/setup-nodejs
-        with:
-          build-command: pnpm build
 
-      - name: Send Slack notification on failure
-        if: failure() && inputs.notify_on_failure == true
-        uses: slackapi/slack-github-action@91efab103c0de0a537f72a35f6b8cda0ee76bf0a # v2.1.1
-        with:
-          method: chat.postMessage
-          token: ${{ secrets.QBOT_SLACK_TOKEN }}
-          payload: |
-            {
-              "channel": "C035KBDA917",
-              "text": "🚨 Windows build failed for `${{ github.repository }}` on branch `${{ github.ref_name }}`",
-              "blocks": [
-                {
-                  "type": "header",
-                  "text": { "type": "plain_text", "text": "🚨 Windows Build Failed" }
-                },
-                {
-                  "type": "section",
-                  "fields": [
-                    { "type": "mrkdwn", "text": "*Repository:*\n<${{ github.server_url }}/${{ github.repository }}|${{ github.repository }}>" },
-                    { "type": "mrkdwn", "text": "*Branch:*\n`${{ github.ref_name }}`" },
-                    { "type": "mrkdwn", "text": "*Commit:*\n`${{ github.sha }}`" },
-                    { "type": "mrkdwn", "text": "*Trigger:*\n${{ github.event_name }}" }
-                  ]
-                },
-                {
-                  "type": "section",
-                  "text": { "type": "mrkdwn", "text": ":warning: *Cross-platform compatibility issue detected*\nThis likely indicates Unix-specific commands in package.json scripts or build configuration that don't work on Windows." }
-                },
-                {
-                  "type": "actions",
-                  "elements": [
-                    {
-                      "type": "button",
-                      "text": { "type": "plain_text", "text": ":github: View Workflow Run" },
-                      "style": "danger",
-                      "url": "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-                    }
-                  ]
-                }
-              ]
-            }
+       
+      
+      
+        
+}
+
+
+Frame_shutter{
+        scale.gap()
+        a = int input["rods number"];
+        .phase()included
+        build_workflow._shutter();
+
+        extension: frame[]
+
+      rods.lead("vertical","horizontal");
+
+      sequences.down,end.;
+
+      
+}
+parrallax_effect{
+
+        .env.sequence => [..chrome_val"xx"[prod]]| [E=mc[mag] => keep_edibles];
+        env.pair[curvv].phase[seq_dep[1,2[2,1]]]
+        .env.correct[parallax.sequence.pair.audio()]
+
+
+}
+vp_void{
+
+    freq.change["wind.interfere"][
+      .parrallax_effect .call("env.sequence")
+      .phase_calculation: vormir_void;
+      .interim_files : plug-.in{}
+      )
+
+    
+    ]
+
+
+}
+.column_spaces["cloud formations"]{
+      forms.self_induced;
+      camera_always: on
+      excel : double_values
+
+
+
+}
+
+double_values{
+ time_interval = 10 seconds;
+ initial_count =  1
+
+ time.now(.infer(subtract->"time_interval:chk_memory.guide"));
+ time_interval + count;
+
+}
+
+diffraction_elements{
+
+    ray_tracing[induction] : 2
+    angle = veverted
+    glare = shiny
+    line = spaces
+    shadows = transparent density
+
+    cone: red[.p[g.pass.cable[-c.lightning{0,0}cc_pink]]]
+    white-flemigages-sparse-cream, cotton-velvet.[-cc.builder()]
+    -blender[-animate,liquid[eatable,!pure"farmers'apple"]]
+    -[.architectual_scale]: file.hub[h|p]:play[speakers.find_num]
+    -g_parsers: locations, status = "always_delivered" => [kuber.crank(motor.env)]
+    pace_fraction.[triangle_phases].transform[guides,lib-packages]
+    
+
+}
+.direct_track(){
+
+    dev.cool[inspire].hp_[fill][follow-predict{choice = none},leave = "mandatory"]
+    wait.async().next_sequences;
+    calendar.view("next days and months moving")
+    direct: false-moves[audio-repl.storages()] ##JUMONEE ADD AAKKANE: -PLUGIN ITTAL MATHI
+    konami_interview: spaces.score("cruiff was there in my team")
+
+}
+.depth{
+ground = 0;
+upward: building.bottom(in m) - current_in[floors]
+downward: building.top(in m) - current_in[floors]
+
+
+}
+
+parse_giggle{
+
+        hunger = valid
+        share = true
+        chromium_valve = off|on;
+        
+    
+}
+
