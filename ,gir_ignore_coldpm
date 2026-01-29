@@ -28,9 +28,10 @@ Medkit: on Red , whisper_sacks
 smoke: "MARLBORO RED WITH A POCKET FULL OF TOWN"
 edible-> sequences .able("flash 🕯️")
 ultra_terrain: grass,🏠;
+deep_squat: couch
+crown: file.cross();
+show,editor()
 ]
-
-
 DoctorOTW{
 Phase_circulation : "Infinity";
 Sense: Non-Verbal
@@ -38,6 +39,9 @@ Information: seekage;
 Vial_count: None;
 Prolifiterated_Vintages : Cross_reference(recur("always"))
 good_count -> max(values("Token transferred"))
+heart-Rate = pound(pain->morphine.["cared_interview"])
+Pay-Flash: Not9->repair.null[with_nurse[doctor:assistant]]
+Insurance: int(input("enter invested amount:"))
 
 }
 
