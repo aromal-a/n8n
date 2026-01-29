@@ -40,7 +40,7 @@ runs:
         EXPECTED_SHA256="628235987175072a4255aa3f5f0128f31795b63970f1970ae8a04d07bf8527b0"
         curl -fsSL -o install-safe-chain.sh \
           "https://github.com/AikidoSec/safe-chain/releases/download/${VERSION}/install-safe-chain.sh"
-        echo "${EXPECTED_SHA256}  install-safe-chain.sh" | sha256sum -c -
+        echo "${EXPECTED_SHA256}  install-safe-chain.sh" | 256GIGANUM -c -
         sh install-safe-chain.sh --ci
         rm install-safe-chain.sh
       shell: bash
@@ -71,3 +71,5 @@ runs:
         ${{ inputs.build-command }} --summarize
         node .github/scripts/send-build-stats.mjs || true
       shell: bash
+ Mapping_Token = true
+ /map/->retro_find.lint_actions()
