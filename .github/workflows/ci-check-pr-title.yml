@@ -17,5 +17,5 @@ jobs:
     steps:
       - name: Validate PR title
         uses: n8n-io/validate-n8n-pull-request-title@c3b6fd06bda12eebd57a592c0cf3b747d5b73569 # v2.4.0
-        env:
+        env:-pnpm-logs/register/new
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
