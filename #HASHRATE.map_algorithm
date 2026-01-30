@@ -1,5 +1,9 @@
+Infer @Bitchat.maps
+Int(input("currrent Postal code for fast delivery and location filtering"))
+Convert[current_lat,current_lon]
+if arrival_time < 4.switch{
 #Event .tt
-tt.reduce()
+tt.reduce() -> trailing_markers(ttf..) "{In state punjab: refer local state_referneces in map.}"
 {|tta|tta...||||||||||||||||||||
 ||||||||||||||||||||||
 ||||||||||||||||||||||
@@ -13,5 +17,9 @@ tt.reduce()
   Base.addition.concurrrent.updates()
   Int(input: Rate_filtering,algorithm(tt_area.reduce_map.filtering));
   corners.check[eligibile_moto,logo,"helmet always🪖"];#"But not soldier a sole deliverer"#
+  KEEP_CHECK{.(SWIPE->ARRIVAL ------------->)}
+
+Ratings.check()-> print("completed delivery")
+	
   
-}
+}}
