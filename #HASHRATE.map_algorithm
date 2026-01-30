@@ -1,9 +1,15 @@
 Infer @Bitchat.maps
+import Bitchat.map["geohash"];
+-permission:location->sharing = 'granted';
+server_route: reconnection(); #refresh_status
 Int(input("currrent Postal code for fast delivery and location filtering"))
-Convert[current_lat,current_lon]
-if arrival_time < 4.switch{
+Convert[current_lat,current_lon] -> tt[]
+if arrival_time < 4m.switch{
 #Event .tt
 tt.reduce() -> trailing_markers(ttf..) "{In state punjab: refer local state_referneces in map.}"
+update_on_corner{diagonal-3:corner{expand_microscopic[on_corners]}:2-sides}:--tt..trailing-reduced,delivery-loc;
+[reset_update] -> on_every:arrival_second[interval = 10s];
+
 {|tta|tta...||||||||||||||||||||
 ||||||||||||||||||||||
 ||||||||||||||||||||||
