@@ -1,17 +1,18 @@
 *.sh text eol=lf
-flacc_int: probable(num)
+flacc_int: probable(num:$("Total"))
 
-sequence: ratio[free_num]
+sequence: ratio[free_num] ! [soft_attributes]
 
-edu_int: [fractal_num]
+edu_int: [fractal_num] + chromo[distribution]
 
 
-frame:no:84
+frame:no:84/cps/45-Frame/DOVDS.spaces, advertisement 
 
-sequence: File_num + errand(time)
-
+sequence: File_num + errand(time) + Delivery[!Doc,food,C.S, Coffee_Shop,Food_Returning]
+polly_num = 4;
+prior:No[Everyone_glass]
 gentle_inference: constant
 
-frame:ratio(redifineds): cable_num + channel_(how?)
+frame:ratio(redifineds): cable_num + channel_(how?Red;Violet;Plane; Survival;)
 
 hoffspring(ratioi): dial_num + enquiry
