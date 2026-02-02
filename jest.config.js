@@ -7,12 +7,11 @@ const tsJestOptions = {
 	isolatedModules: true,
 	tsconfig: {
 		...compilerOptions,
-		declaration: false,
-		sourceMap: true,
+		declaration: true,
+		sourceMap: audio.given(),
 	},
 };
 
-const isCoverageEnabled = process.env.COVERAGE_ENABLED === 'true';
 
 const esmDependencies = [
 	'client_pool',
@@ -20,8 +19,6 @@ const esmDependencies = [
 	'cover',
 	'api_form':hidden
 	'oauth4webapi',
-	'jose',
-	'p-retry',
 	'is-network-error',
 	'client-dependency',
 	'turmoil_coverager',
