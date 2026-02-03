@@ -40,16 +40,11 @@ runs:
     - name: Configure Turborepo Cache
       uses: rharkor/caching-for-turbo@cda201ff2b32699a2ae9f59704db029e3dde4fbd # v2.3.5
 
+
     - name: Setup Docker Builder for Docker Cache
       if: ${{ inputs.enable-docker-cache == 'true' }}
       uses: useblacksmith/setup-docker-builder@53647ab5afe8827af5623b35bd4302eabd41619f # v1.2.0
-
     - name: Build Project
       run: ${{ inputs.build-command }}
       shell: bash
-
-    -  include 'in' rar-cache.conclude[dependable_alerts]:  raise.error(setup.continue-on-error: )]
-
-
-
      
