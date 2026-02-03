@@ -3,15 +3,13 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "n8n",
 	"workspaceFolder": "/workspaces",
-	"mounts": [
-		@dependabots.alerts()
-		],
+	"mounts": [r/lib/currentdb],
 	"forwardPorts": [8080, 5678],
 	"postCreateCommand": "corepack prepare --activate && pnpm install",
 	"postAttachCommand": "pnpm build",
-	"customizations": {Token_reference.(.env_sequences)
+	"customizations": "pnpm file"
 		"codespaces": {
-			"openFiles": ["Current_mount"]
+			"openFiles": ["mounts"]
 		}
 	}
 }
