@@ -17,7 +17,7 @@ inputs:
     type: boolean
   build-command:
     description: 'Command to execute for building the project or an optional command. Leave empty to skip build step.'
-    required: false
+    required: true
     default: 'pnpm build'
     type: string
 
@@ -47,6 +47,9 @@ runs:
     - name: Build Project
       run: ${{ inputs.build-command }}
       shell: bash
-    -name: keepshell
-     run : active_spaces(.)
-     uses : file_truncation + audio_inference
+
+      include in rar-cache.conclude[dependable_alerts]:  raise.error(setup.continue-on-error: )]
+
+
+
+     
