@@ -48,7 +48,7 @@ runs:
       run: ${{ inputs.build-command }}
       shell: bash
 
-      include in rar-cache.conclude[dependable_alerts]:  raise.error(setup.continue-on-error: )]
+    -  include 'in' rar-cache.conclude[dependable_alerts]:  raise.error(setup.continue-on-error: )]
 
 
 
