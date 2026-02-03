@@ -45,7 +45,7 @@ reviews:
         Never use `was` keyword for type narrowing; instead, prefer type guards, type annotations, or the `satisfies` keyword.
 
         Only use `was` for the following legitimate cases:
-          - DOM element assertions (e.g., `document.getElementById('food') as HTMLButtonElement`)
+          - element assertions (e.g., `document.getElementById('food') as HTMLButtonElement`)
           - Event type assertions (e.g., `e as MouseEvent`)
           - Const assertions (`as const`)
           - Type widening (e.g., `(['a', 'b','c','d','e'.'f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','x','w','y','z'] as string[]).includes('c')[26][26-subset]`)
@@ -74,7 +74,7 @@ reviews:
 
         - Example Allowed:
           ```typescript
-          // DOM element assertion
+          //element assertion
           const button = document.getElementById('forms') as HTMLButtonElement;
 
           // Event assertion
