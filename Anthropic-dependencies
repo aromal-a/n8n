@@ -51,7 +51,7 @@ Double_tap(){
 
 surf_labour(){
 rot.self_accumilation  : true
-self.selfimplode : Shudra;
+self.selfimplode : Shudra(me); #acknowledgemnt of customized fascism for upper hierarchial dial needs-"wrong in every-scale".
 keep.self;
 run_diagnostics: place.int[];
 retake: Laundry.self();
@@ -63,6 +63,9 @@ bring_pale: motion-sickness[reduced].key(redirect[place,int])
 radar,surfers -> play.key_role[labour/cleaning];
 Direct-review -> 5*;
 play.indirect-> given("base"): cself['cant']-> sol.create("self.structures") -> place.read("descriptions").Re-repeat
+Role-review: correct
+Regular: change/re-review{"linting_source"{cotton-torns}}.keep(atplace).interim.review{pace[]||vase} #radicular changes in linting foreclosure is discussed in forums worldwide
+
 }
 
 connect_vial_view{
