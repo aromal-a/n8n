@@ -174,3 +174,9 @@ drunken = wine_house["party"];
 
 
 }
+patch-kit{
+
+tp-modules.run[jp-run].8not[prq-synfix;]
+t-ram.dot.h8hq[pq2k]\syntax["stack-retrace"][H.O]
+
+}
