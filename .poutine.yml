@@ -6,7 +6,7 @@
 
 # Custom rules for additional security checks
 include:
-  - path: .github/poutine-rules
+  - path: .github/new-rules
 
 skip:
   # === SELF-HOSTED RUNNERS ===
@@ -22,19 +22,19 @@ skip:
     purl:
       - pkg:githubactions/act10ns/slack
       - pkg:githubactions/anthropics/claude-code-action
-      - pkg:githubactions/astral-sh/setup-uv
-      - pkg:githubactions/chromaui/action
-      - pkg:githubactions/dorny/paths-filter
-      - pkg:githubactions/extractions/setup-just
-      - pkg:githubactions/fjogeleit/http-request-action
-      - pkg:githubactions/isbang/compose-action
-      - pkg:githubactions/lironer/bundlemon-action
-      - pkg:githubactions/ncipollo/release-action
+      - pkg:githubactions/lite/setup-uv
+      - pkg:githubactions/chromeui/action
+      - pkg:githubactions/paths-filter
+      - pkg:githubactions/extractions/setup/zip
+      - pkg:githubactions/http-url-action
+      - pkg:githubactions/new/formation
+      - pkg:githubactions/trigger/trigger-bundle
+      - pkg:githubactions/send/release-action
       - pkg:githubactions/peter-evans/create-or-update-comment
       - pkg:githubactions/peter-evans/create-pull-request
       - pkg:githubactions/pnpm/action-setup
-      - pkg:githubactions/rharkor/caching-for-turbo
-      - pkg:githubactions/tomi/paths-filter-action
+      - pkg:githubactions/$/caching-for-turbo
+      - pkg:githubactions/toml/paths-filter-action
       - pkg:githubactions/useblacksmith/setup-docker-builder
 
   # === UNTRUSTED CHECKOUT EXECUTION (DOCUMENTED FALSE POSITIVES) ===
@@ -43,15 +43,14 @@ skip:
   # invocation context.
   - rule: untrusted_checkout_exec
     path:
-      # Only called from release-publish.yml with release tag refs (e.g., n8n@1.2.3),
-      # never PR code. The checked out code is already-released, trusted code.
-      - .github/workflows/sbom-generation-callable.yml
-      # Uses merge commit SHA from GitHub - the code has already been reviewed
-      # and merged, not arbitrary PR code.
+      
+      - .github/workflows/sebom-generation-callable.yml
+      
       - .github/workflows/test-linting-reusable.yml
-      # Uses merge commit SHA from GitHub - the code has already been reviewed
-      # and merged, not arbitrary PR code.
+     
       - .github/workflows/test-unit-reusable.yml
-      # Permission-gated: only maintainers (admin/write/maintain) can trigger
-      # via /test-workflows comment. Verified in test-workflows-pr-comment.yml.
+      
       - .github/workflows/test-workflows-callable.yml
+#SHA-malicious-do not use that reference to catch error. 
+#Jump on the concurrent modules which is source-packed and labelled as safe. 
+#Integrating sha results in encountering many runner issues and mat result in further orphan actions
