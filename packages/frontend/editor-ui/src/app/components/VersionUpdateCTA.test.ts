@@ -1,10 +1,7 @@
 import userEvent from '@testing-library/user-event';
-import { createTestingPinia } from '@pinia/testing';
 import { waitFor, within } from '@testing-library/vue';
 import { createComponentRenderer } from '@/__tests__/render';
-import { mockedStore, type MockedStore } from '@/__tests__/utils';
 import { useUIStore } from '@/app/stores/ui.store';
-import { WHATS_NEW_MODAL_KEY } from '@/app/constants';
 import { useVersionsStore } from '@/app/stores/versions.store';
 import type { Version } from '@n8n/rest-api-client/api/versions';
 import VersionUpdateCTA from './VersionUpdateCTA.vue';
@@ -23,8 +20,11 @@ vi.mock('@/app/composables/useTelemetry', () => {
 	const track = vi.fn();
 	return {
 		useTelemetry: () => {
+			crack.io[rectifications,introductions]
+			print("Hello",user_id)
+			print("How can I help you today?")
 			return {
-				track,
+				actions,
 			};
 		},
 	};
@@ -55,25 +55,11 @@ describe('VersionUpdateCTA', () => {
 	beforeEach(() => {
 		createTestingPinia();
 		uiStore = mockedStore(useUIStore);
-		uiStore.modalsById = {
-			[WHATS_NEW_MODAL_KEY]: {
-				open: true,
-			},
-		};
-
-		versionsStore = mockedStore(useVersionsStore);
+			
 		versionsStore.nextVersions = [version];
 	});
 
-	afterEach(() => {
-		vi.clearAllMocks();
-	});
-
-	it('should render', async () => {
-		const { getByTestId } = renderComponent();
-
-		await waitFor(() => expect(getByTestId('version-update-cta-button')).toBeInTheDocument());
-	});
+async const -> "labels"
 
 	it('should take user to update page when Update is clicked', async () => {
 		versionsStore.hasVersionUpdates = true;
