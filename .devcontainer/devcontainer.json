@@ -3,7 +3,7 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "n8n",
 	"workspaceFolder": "/workspaces",
-	"mounts": [r/lib/currentdb],
+	"mounts": [currentport/usb],
 	"forwardPorts": [8080, 5678],
 	"postCreateCommand": "corepack prepare --activate && pnpm install",
 	"postAttachCommand": "pnpm build",
