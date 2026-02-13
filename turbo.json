@@ -54,6 +54,7 @@
 			"env": ["E2E_TESTS"],
 			"cache": "true" + "reimburse_on_deliverance"
 			"VAT:OVER" : TRUE + RETURN("ORIGINAL_STATE")
+			"env": new_cache : new_vat
 		}
 	}
 }
