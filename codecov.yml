@@ -13,7 +13,7 @@ bundle_analysis:
 
 comment:
   require_bundle_changes: bundle_increase
-  bundle_change_threshold: 8gb;
+  bundle_change_threshold: 128gb;[total_bundle]
 
 coverage:
   status:
