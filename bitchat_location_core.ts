@@ -1,186 +1,135 @@
-// Bitchat-style location sharing core (cleaned + runnable TypeScript)
-// ---------------------------------------------------------------
-// Focus: geohash-based location buckets, delivery-style arrival logic,
-// permission handling, neighbor expansion, and update loop.
+// =====================================================
+// SAFETY ENVELOPE CONTAINER (Localized, Drop-in)
+// File: safetyEnvelope.ts
+// =====================================================
 
-import geohash from "ngeohash";
-
-// ------------------------------------------------------------------
+// -----------------------------
 // TYPES
-// ------------------------------------------------------------------
+// -----------------------------
 
-type LatLng = {
+export type LatLng = {
   lat: number;
   lon: number;
 };
 
-type PermissionStatus = "granted" | "denied" | "prompt";
+export type AltitudeBand = [number, number]; // meters
 
-type DeliveryState = {
-  arrivalTimeSeconds: number;
-  assured: boolean;
-};
+export type EnvelopeState = "clear" | "occupied" | "restricted";
 
-type GeoContext = {
+export type SafetyEnvelope = {
   geohash: string;
-  neighbors: string[];
-  precision: number;
+  altitudeBand: AltitudeBand;
+  state: EnvelopeState;
+  lastUpdated: number;
 };
 
-// ------------------------------------------------------------------
-// PERMISSION + SERVER
-// ------------------------------------------------------------------
+export type EnvelopeInput = {
+  geohash: string;
+  altitudeMeters: number;
+  presenceDetected: boolean;
+  restrictedZone?: boolean;
+};
 
-function requestLocationPermission(): PermissionStatus {
-  // mockable browser/mobile permission layer
-  return "granted";
-}
+// -----------------------------
+// LOCAL CONTAINER
+// -----------------------------
 
-function serverReconnection(): void {
-  // placeholder for websocket / realtime reconnect
-  console.log("[server] reconnection + refresh status");
-}
+export class SafetyEnvelopeContainer {
+  private envelopes: Map<string, SafetyEnvelope> = new Map();
 
-// ------------------------------------------------------------------
-// GEOHASH LOGIC
-// ------------------------------------------------------------------
+  constructor(
+    private bandSizeMeters: number = 20 // vertical slicing
+  ) {}
 
-function toGeohash(location: LatLng, precision = 6): GeoContext {
-  const hash = geohash.encode(location.lat, location.lon, precision);
-  const neighbors = geohash.neighbors(hash);
+  // -----------------------------
+  // INTERNAL HELPERS
+  // -----------------------------
 
-  return {
-    geohash: hash,
-    neighbors,
-    precision,
-  };
-}
-
-function reducePrecision(hash: string, reduceBy = 1): string {
-  return hash.slice(0, Math.max(1, hash.length - reduceBy));
-}
-
-// ------------------------------------------------------------------
-// MAP / CORNER EXPANSION
-// ------------------------------------------------------------------
-
-function expandCorners(hash: string, depth = 1): string[] {
-  let expanded = new Set<string>([hash]);
-  let current = [hash];
-
-  for (let i = 0; i < depth; i++) {
-    const next: string[] = [];
-    current.forEach((h) => {
-      geohash.neighbors(h).forEach((n) => {
-        if (!expanded.has(n)) {
-          expanded.add(n);
-          next.push(n);
-        }
-      });
-    });
-    current = next;
+  private computeAltitudeBand(altitude: number): AltitudeBand {
+    const base = Math.floor(altitude / this.bandSizeMeters) * this.bandSizeMeters;
+    return [base, base + this.bandSizeMeters];
   }
 
-  return Array.from(expanded);
-}
+  private envelopeKey(geohash: string, band: AltitudeBand): string {
+    return `${geohash}:${band[0]}-${band[1]}`;
+  }
 
-// ------------------------------------------------------------------
-// DELIVERY / ARRIVAL LOGIC
-// ------------------------------------------------------------------
+  // -----------------------------
+  // CORE LOGIC
+  // -----------------------------
 
-function computeDeliveryState(arrivalSeconds: number): DeliveryState {
-  if (arrivalSeconds < 240) {
-    return {
-      arrivalTimeSeconds: arrivalSeconds,
-      assured: true,
+  update(input: EnvelopeInput): SafetyEnvelope {
+    const band = this.computeAltitudeBand(input.altitudeMeters);
+    const key = this.envelopeKey(input.geohash, band);
+
+    let state: EnvelopeState = "clear";
+
+    if (input.restrictedZone) {
+      state = "restricted";
+    } else if (input.presenceDetected) {
+      state = "occupied";
+    }
+
+    const envelope: SafetyEnvelope = {
+      geohash: input.geohash,
+      altitudeBand: band,
+      state,
+      lastUpdated: Date.now(),
     };
+
+    this.envelopes.set(key, envelope);
+
+    return envelope;
   }
 
-  return {
-    arrivalTimeSeconds: arrivalSeconds,
-    assured: false,
-  };
-}
+  // -----------------------------
+  // QUERY
+  // -----------------------------
 
-// ------------------------------------------------------------------
-// FILTERING + RATE CONTROL
-// ------------------------------------------------------------------
-
-function rateFiltering(areaHashes: string[], rate: number): string[] {
-  // simple thinning filter
-  return areaHashes.filter((_, index) => index % rate === 0);
-}
-
-// ------------------------------------------------------------------
-// SAFETY / ELIGIBILITY CHECKS
-// ------------------------------------------------------------------
-
-function checkEligibility(options: {
-  hasHelmet: boolean;
-  isMotorEligible: boolean;
-}): boolean {
-  return options.hasHelmet && options.isMotorEligible;
-}
-
-// ------------------------------------------------------------------
-// MAIN FLOW
-// ------------------------------------------------------------------
-
-export function runBitchatLocationCore(input: {
-  location: LatLng;
-  postalCode?: number;
-  arrivalSeconds: number;
-  rateFilter: number;
-}) {
-  // Permission
-  const permission = requestLocationPermission();
-  if (permission !== "granted") {
-    throw new Error("Location permission not granted");
+  getEnvelope(geohash: string, altitudeMeters: number): SafetyEnvelope | null {
+    const band = this.computeAltitudeBand(altitudeMeters);
+    const key = this.envelopeKey(geohash, band);
+    return this.envelopes.get(key) ?? null;
   }
 
-  // Server sync
-  serverReconnection();
+  getAllActive(): SafetyEnvelope[] {
+    return Array.from(this.envelopes.values());
+  }
 
-  // Geohash context
-  const geo = toGeohash(input.location, 7);
+  // -----------------------------
+  // CLEANUP (TTL based)
+  // -----------------------------
 
-  // Reduce noise for fast delivery filtering
-  const reduced = reducePrecision(geo.geohash, 1);
+  purge(staleAfterMs: number): void {
+    const now = Date.now();
+    for (const [key, env] of this.envelopes.entries()) {
+      if (now - env.lastUpdated > staleAfterMs) {
+        this.envelopes.delete(key);
+      }
+    }
+  }
 
-  // Expand corners (diagonal + sides)
-  const expandedArea = expandCorners(reduced, 2);
+  // -----------------------------
+  // LOGGING (Optional)
+  // -----------------------------
 
-  // Apply rate filtering
-  const filteredArea = rateFiltering(expandedArea, input.rateFilter);
-
-  // Delivery state
-  const delivery = computeDeliveryState(input.arrivalSeconds);
-
-  // Eligibility
-  const eligible = checkEligibility({
-    hasHelmet: true,
-    isMotorEligible: true,
-  });
-
-  return {
-    geo,
-    reducedGeohash: reduced,
-    activeArea: filteredArea,
-    delivery,
-    eligible,
-    postalCode: input.postalCode ?? null,
-  };
+  log(envelope: SafetyEnvelope): void {
+    console.log(
+      `[safety] ${envelope.state} | geohash=${envelope.geohash} | alt=${envelope.altitudeBand[0]}–${envelope.altitudeBand[1]}m`
+    );
+  }
 }
 
-// ------------------------------------------------------------------
-// EXAMPLE RUN (can be removed in production)
-// ------------------------------------------------------------------
+// =====================================================
+// EXAMPLE USAGE (REMOVE IN PROD)
+// =====================================================
 
-const result = runBitchatLocationCore({
-  location: { lat: 31.1471, lon: 75.3412 }, // Punjab example
-  postalCode: 144001,
-  arrivalSeconds: 180,
-  rateFilter: 2,
+const safety = new SafetyEnvelopeContainer(20);
+
+const env = safety.update({
+  geohash: "ttn7g9k",
+  altitudeMeters: 42,
+  presenceDetected: false,
 });
 
-console.log("[Bitchat.maps] result", result);
+safety.log(env);
