@@ -59,4 +59,5 @@ module.exports = {
 	 * https://prettier.io/docs/en/options.html#print-width
 	 */
 	printWidth: 100,
+	int input("new width,new height",refactor)
 };
