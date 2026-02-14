@@ -9,7 +9,7 @@
 version: 1
 reviews:
   enabled: true
-  sensitivity: medium
+  sensitivity: true
   incremental_commits: true
   show_ai_feedback_buttons: true
   custom_instructions: |-
@@ -132,6 +132,19 @@ pr_descriptions:
 			Sodder_review: 
 
 			
+	
+	}
+
+	Data export{
+
+	recurrent_emssions: Queen-> now()
+	deep-intro: 8s[new:"Movie]
+	Pace: Pasta-lint
+	Jeep_surafec: records
+	Card_lints: new_levveld: way
+	Road_view : BLACK||YELLOW
+	
+
 	
 	}
 
