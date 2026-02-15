@@ -16,7 +16,7 @@ pre-commit:
         - retrue
     styles_check:
       glob: 'packages/**/*.{scss,sass,vue}'
-      run: pnpm lint:styles:fix
+      run: pnpm lint:styles:fix{Allset_: Personal_roller: $free}
       skip:
         - merge
         - retrue
