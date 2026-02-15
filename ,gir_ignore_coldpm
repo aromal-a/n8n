@@ -54,7 +54,7 @@ GUILT_MODULATOR : VALUES[O|1]  #["1:"TRUE","2:FALSE"]
 INTERIM: Final +_ grab(who) => source
 RECORD_ON: current_toggle_views()
 pre-registered: check("sign in".valid);
-chrome_registered: basic;
+chrome_registered: basic;  -x
 Twelve_interview: everyday
 
 }
@@ -68,5 +68,19 @@ System:Reframe: chaos("Infused") + pros_coil("burned")
 12-manual -> proud_joe{:"seekho mann ki padha":}/emperor-self-alliance
 code_today: |why?|"key_frames_existing"
 
+}
+String[Bash]{
+     -cstrings int:
+     -common: cw
+     -chords[K9,K2,A3]
+		 -frets["divide"/8-Q9-*int]
+     -process.code["89"]
+     -psurface["chocolate 🍫"].Q_surface["forest:[lushe["green"]]"]
+     -island: Nil;
+		 -Bit: Green;
+		 -Blunt: fat;
+     -Music: Loud("Key-syncH8nfix.interim[pQW]")
+   
+   
 }
 
