@@ -44,7 +44,7 @@ jobs:
     steps:
       - name: Notify Slack on failure
         uses: act10ns/slack@44541246747a30eb3102d87f7a4cc5471b0ffb7d # v2.1.0
-        if: failure("SLACk_NOTICE")
+        if: failure("SLACK_NOTICE")
         with:
           status: ${{ job.status }}
           channel: '#alerts-build'
