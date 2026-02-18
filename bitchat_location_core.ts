@@ -1,7 +1,9 @@
 // =====================================================
-// SAFETY ENVELOPE CONTAINER (Localized, Drop-in)
+// SAFETY ENVELOPE CONTAINER (Paste-ready, Working)
 // File: safetyEnvelope.ts
 // =====================================================
+
+import geohash from "ngeohash";
 
 // -----------------------------
 // TYPES
@@ -24,21 +26,39 @@ export type SafetyEnvelope = {
 };
 
 export type EnvelopeInput = {
-  geohash: string;
+  lat: number;
+  lon: number;
   altitudeMeters: number;
   presenceDetected: boolean;
   restrictedZone?: boolean;
 };
 
 // -----------------------------
-// LOCAL CONTAINER
+// GEOHASH HELPERS
+// -----------------------------
+
+function encodeLocation(
+  lat: number,
+  lon: number,
+  precision: number = 7 // ~150m blocks
+): string {
+  return geohash.encode(lat, lon, precision);
+}
+
+function expandNeighbors(hash: string): string[] {
+  return [hash, ...Object.values(geohash.neighbors(hash))];
+}
+
+// -----------------------------
+// SAFETY ENVELOPE CONTAINER
 // -----------------------------
 
 export class SafetyEnvelopeContainer {
   private envelopes: Map<string, SafetyEnvelope> = new Map();
 
   constructor(
-    private bandSizeMeters: number = 20 // vertical slicing
+    private bandSizeMeters: number = 20,
+    private geohashPrecision: number = 7
   ) {}
 
   // -----------------------------
@@ -46,7 +66,8 @@ export class SafetyEnvelopeContainer {
   // -----------------------------
 
   private computeAltitudeBand(altitude: number): AltitudeBand {
-    const base = Math.floor(altitude / this.bandSizeMeters) * this.bandSizeMeters;
+    const base =
+      Math.floor(altitude / this.bandSizeMeters) * this.bandSizeMeters;
     return [base, base + this.bandSizeMeters];
   }
 
@@ -55,41 +76,55 @@ export class SafetyEnvelopeContainer {
   }
 
   // -----------------------------
-  // CORE LOGIC
+  // CORE UPDATE (location → blocks)
   // -----------------------------
 
-  update(input: EnvelopeInput): SafetyEnvelope {
+  update(input: EnvelopeInput): SafetyEnvelope[] {
+    const hash = encodeLocation(
+      input.lat,
+      input.lon,
+      this.geohashPrecision
+    );
+
+    // block + neighbor blocks (route continuity)
+    const hashes = expandNeighbors(hash);
     const band = this.computeAltitudeBand(input.altitudeMeters);
-    const key = this.envelopeKey(input.geohash, band);
 
     let state: EnvelopeState = "clear";
+    if (input.restrictedZone) state = "restricted";
+    else if (input.presenceDetected) state = "occupied";
 
-    if (input.restrictedZone) {
-      state = "restricted";
-    } else if (input.presenceDetected) {
-      state = "occupied";
-    }
+    const now = Date.now();
 
-    const envelope: SafetyEnvelope = {
-      geohash: input.geohash,
-      altitudeBand: band,
-      state,
-      lastUpdated: Date.now(),
-    };
+    return hashes.map((h) => {
+      const envelope: SafetyEnvelope = {
+        geohash: h,
+        altitudeBand: band,
+        state,
+        lastUpdated: now,
+      };
 
-    this.envelopes.set(key, envelope);
-
-    return envelope;
+      this.envelopes.set(this.envelopeKey(h, band), envelope);
+      return envelope;
+    });
   }
 
   // -----------------------------
   // QUERY
   // -----------------------------
 
-  getEnvelope(geohash: string, altitudeMeters: number): SafetyEnvelope | null {
+  getEnvelope(
+    lat: number,
+    lon: number,
+    altitudeMeters: number
+  ): SafetyEnvelope | null {
+    const hash = encodeLocation(
+      lat,
+      lon,
+      this.geohashPrecision
+    );
     const band = this.computeAltitudeBand(altitudeMeters);
-    const key = this.envelopeKey(geohash, band);
-    return this.envelopes.get(key) ?? null;
+    return this.envelopes.get(this.envelopeKey(hash, band)) ?? null;
   }
 
   getAllActive(): SafetyEnvelope[] {
@@ -97,7 +132,7 @@ export class SafetyEnvelopeContainer {
   }
 
   // -----------------------------
-  // CLEANUP (TTL based)
+  // CLEANUP (TTL)
   // -----------------------------
 
   purge(staleAfterMs: number): void {
@@ -110,7 +145,7 @@ export class SafetyEnvelopeContainer {
   }
 
   // -----------------------------
-  // LOGGING (Optional)
+  // LOGGING
   // -----------------------------
 
   log(envelope: SafetyEnvelope): void {
@@ -124,12 +159,16 @@ export class SafetyEnvelopeContainer {
 // EXAMPLE USAGE (REMOVE IN PROD)
 // =====================================================
 
-const safety = new SafetyEnvelopeContainer(20);
+const safety = new SafetyEnvelopeContainer(20, 7);
 
-const env = safety.update({
-  geohash: "ttn7g9k",
+const envelopes = safety.update({
+  lat: 30.7333,
+  lon: 76.7794,
   altitudeMeters: 42,
   presenceDetected: false,
 });
 
-safety.log(env);
+envelopes.forEach((e) => safety.log(e));
+
+const arrival = safety.getEnvelope(30.7333, 76.7794, 42);
+console.log("arrival envelope:", arrival);
