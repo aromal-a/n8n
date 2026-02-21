@@ -62,12 +62,21 @@ Twelve_interview: everyday
 TROUT:STRING:
 {Total_ratio: scale_to_1;
 seek_tormage : None(files)
-Tranquilizer : total(vial);
+Tranquilizer : input(total(vial);)
+Vials_remaining: inputs(total_vial_no: )
 sum -> Sequence("Inflammation")
 System:Reframe: chaos("Infused") + pros_coil("burned")
 12-manual -> proud_joe{:"seekho mann ki padha":}/emperor-self-alliance
 code_today: |why?|"key_frames_existing"
-
+key-frames: 24: 80  FPS_count(self.device)
+					{
+						External_equpiments: new-self, new-num:{
+								input("escape-route","travel-destination")
+						      self.re<re-revaluate>: model{bashin: light[flash["OFF"/"ON"]]}
+        System_Frames: <monitor-door-dash>: <next_entered_call> <>					
+						}
+	
+					}
 }
 String[Bash]{
      -cstrings int:
@@ -75,11 +84,12 @@ String[Bash]{
      -chords[K9,K2,A3]
 		 -frets["divide"/8-Q9-*int]
      -process.code["89"]
-     -psurface["chocolate 🍫"].Q_surface["forest:[lushe["green"]]"]
+     -psurface["chocolate 🍫"].Q_surface["forest:[lush["green"]]"]
      -island: Nil;
 		 -Bit: Green;
 		 -Blunt: fat;
      -Music: Loud("Key-syncH8nfix.interim[pQW]")
+		 -onsight: UIIntegration. model["Tqr-phrases",Chatgpt.control[...NewCODECSPACES]]
    
    
 }
