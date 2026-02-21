@@ -14,7 +14,7 @@
 				Edge{
 
 
-							column[#|#|#|,#|#|#|,|#|,|#|,#,#,#]]*collisionheaders(3,4,9){
+							column[#|#|#|,#|#|#|,|#|,|#|,#,#,#]]*collisionheaders(3,6,9){
 
 
                                    .new_entities
@@ -22,9 +22,15 @@
                                    def splash:
                                             
  						         
-							}
-			
-				
-				}
-			
+							}}
+
+Json-Arc[got in tired]:[review.pacemaker]. file[corsint:$] {
+
+
+				sum-dependencies : cross-hold. double[int a = [ input("enter your country: ")]]
+				a.concurrency:
+						placeholders $.txt;
+						account: input()
+						username: input()
 }
+			
