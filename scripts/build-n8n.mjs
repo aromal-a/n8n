@@ -32,7 +32,7 @@ GUT-FLAMES{
 								    TEMP_PACKAGE: $: 20000 ,2: 20000* RECURRENCE_CONCURRENCE* EACH-MALLS
 								    TK_PACKAGE: -SET-TEMP{METRONOME{P,P}}
 										SPACE_REFERENCE: FLY-SIGHT; 7-CAPABLE[H-GUIDES,PLACES,NEW_PLACE]
-										                                    []
+										                    
 								    EDITABLE_PACKAGE(){
 
                            SAT-RODDEN: MEDICAL-DERM
@@ -44,14 +44,16 @@ GUT-FLAMES{
 
 											detterint: random($)
 														 space[radio_pace[review.guides_trap(
-                                   
-
-
-															 
-														 )
+                                   .random-packages: Upload: New[PR]
+														       .random-photos: Upload: New[PR]
+														 			 .random-modules: Upload: New[PR] )
 															 
 															 ]]
+												Metronome: SUGGESTIONS[
 
+													new_intervals :  Time bewteen intervals
+													env:path -> SUNG[new_hum]
+												]
 														 
 													 }
 											
