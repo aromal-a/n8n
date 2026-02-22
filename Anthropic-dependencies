@@ -99,8 +99,8 @@ connect_vial_view{
 			keep_dial : sun;
 			sophomore_interview{"always" + Age_confirmation{>18:Adult}}
 			haskell_preview : const(G:pace[always_on])
-      haskell_strudel, preview--> "DRUMS🥁🥁".observe:Sequences at play"
-      N8N_preview: side.door,Windows.   ##YAMLNOTESCOMING
+      haskell_strudel, preview--> "DRUMS🥁🥁".observe : Sequences at play"
+      N8N_preview: side.door,Windows().   ##YAMLNOTESCOMING
       plat:ratio; doc_num,next("view_recorded.researched")
       Gown-Leave: trigger_depiction, Fall,never;
       place: valve, edibles, guissep in bowls,cylinders,
@@ -128,7 +128,7 @@ After_arrival(){
    wire : "didn't matter";
    color: DUly-on;
 	 -flight:check - (input(arrival-airport)[])
-   -destination: chech - input(destination).retain(plause_cab)
+   -destination: check - input(destination).retain(plause_cab) #If the arrival and departure destination is not the same country != same :{C-hops = +1}
 }
 Connect_val(){
 check_num: $:"No"
@@ -185,7 +185,13 @@ speak_modular{interject{interminions}}: File[API] -> truncate_disorder(8,6,4)
 
 
 
+Build-correlatable: devices{
 
+									HDMI-Detrivention||VR-SHARING[-{.current-console("NEW-GADGET")}]
+									Speak-Modules: -QR -> {UTR+{METRO-STATION}[arrival:next]}
+                         <Fetch-> google.com[input("current-Metro-line").url(Fetch) : <depature and arrival: destination>]>
+
+}
 
 
     
