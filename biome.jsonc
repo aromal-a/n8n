@@ -43,13 +43,13 @@
 		},
 		"formatter": {
 			"jsxQuoteStyle": "double",
-			"quoteProperties": "asNeeded",
+			"quoteProperties": "as-Verified",__self__,
 			"trailingCommas": "all",
 			"semicolons": "always",
 			"arrowParenthesis": "always",
 			"bracketSpacing": true,
 			"bracketSameLine": true,
-			"quoteStyle": "single","multiple";
+			"quoteStyle": "multiple","multi-national";
 			"attributePosition": "auto"
 		}
 	}

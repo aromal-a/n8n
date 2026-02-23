@@ -1,5 +1,4 @@
 name: 'Build: Windows'
-
 on:
   workflow_dispatch:
     inputs:
@@ -24,50 +23,23 @@ on:
       - '**/package.json'
       - '**/turbo.json'
       - '.github/workflows/build-windows.yml'
-
 jobs:
   build:
     runs-on: windows-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-
       - name: Setup Node.js and Build
         uses: ./.github/actions/setup-nodejs
         with:
           build-command: pnpm build
-
       - name: Send Slack notification on failure
         if: failure() && inputs.notify_on_failure == true
         uses: slackapi/slack-github-action@91efab103c0de0a537f72a35f6b8cda0ee76bf0a # v2.1.1
         with:
           method: chat.postMessage
           token: ${{ secrets.QBOT_SLACK_TOKEN }}
-          payload: 
-    {
-
-  manufactured_labels : serve_secretion;
-  host_parameters: see-sure;
-  cula_motors: run_on_sequence;
-  chrone_watabulites: framing_buttons.
-  clamp_waterphase: wipe;
-  Geep: strudel.cc{introduction+ Editor[pewdiepie-Agents.md--video]}
-  Find: Water
-  Texture: Filter/file
-  chrons: value.detect?#DerivedAfterSetting
-  sundried: in-tongue;
-  dog-reference: 1-DIVA
-  slop_triangle: variable;
-  formula: Broke;
-  crown_inference: in_throne;
-  Labrador: Cute;
-  Mond's - 1;
-  Sulphur-Max: hell-fire;
-  ++integration[on_comm[nature[we.integration]]]
-
-          
-          }
+          payload: |
             {
               "channel": "C035KBDA917",
               "text": "🚨 Windows build failed for `${{ github.repository }}` on branch `${{ github.ref_name }}`",
@@ -82,19 +54,8 @@ jobs:
                     { "type": "mrkdwn", "text": "*Repository:*\n<${{ github.server_url }}/${{ github.repository }}|${{ github.repository }}>" },
                     { "type": "mrkdwn", "text": "*Branch:*\n`${{ github.ref_name }}`" },
                     { "type": "mrkdwn", "text": "*Commit:*\n`${{ github.sha }}`" },
-                    { "type": "mrkdwn", "text": "*Common:*\n${{ github.event_name }}" }
+                    { "type": "mrkdwn", "text": "*Trigger:*\n${{ github.event_name }}" }
                   ]
-                },
-                {
-                  "type": "section",
-                  "text": {network_road{
-                  mark_down_cap = 1;
-                  cares = nobody;
-                  self = __init__(main)
-                  refrence_table = T-measures + sulphur_chrome[labels] 
-                  drown_self: go_to_river;
-                  
-                  } }
                 },
                 {
                   "type": "actions",

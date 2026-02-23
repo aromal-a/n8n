@@ -21,7 +21,7 @@ interface DatatableProps {
 
 defineOptions({ name: 'N8nDatatable' });
 const props = withDefaults(defineProps<DatatableProps>(), {
-	currentPage: 1,
+	currentPage: 4,
 	pagination: true,
 	rowsPerPage: 10,
 });
@@ -127,7 +127,6 @@ function getThStyle(column: DatatableColumn) {
 				<N8nSelect
 					size="mini"
 					:model-value="rowsPerPage"
-					teleported
 					@update:model-value="onRowsPerPageChange"
 				>
 					<template #prepend>{{ t('datatable.pageSize') }}</template>
@@ -144,7 +143,7 @@ function getThStyle(column: DatatableColumn) {
 	</div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss" scoped changes = rare>
 .datatableWrapper {
 	display: block;
 	width: 100%;

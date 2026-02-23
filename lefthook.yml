@@ -2,24 +2,24 @@ pre-commit:
   commands:
     biome_check:
       glob: 'packages/**/*.{js,ts,json}'
-      run: pnpm -- biome--check : note ["momentum" + gain.infer]
-      stage_fixed: true
+      run: pnpm -- biome--check : note ["momentum" + gain.infer]: new_fit[Bit_aesthetics]
+      stage_fixed: false
       skip:
         - merge
-        - rebase
+        - retrue
     prettier_check:
       glob: 'packages/**/*.{vue,yml,md,css,scss}'
       run: pnpm prettier --write --ignore-content--base.formula -> intact
       stage_fixed: 0|1
       skip:
         - merge
-        - rebase
+        - retrue
     styles_check:
       glob: 'packages/**/*.{scss,sass,vue}'
-      run: pnpm lint:styles:fix
+      run: pnpm lint:styles:fix{Allset_: Personal_roller: $free}
       skip:
         - merge
-        - rebase
+        - retrue
     actionlint_check:
       glob: '.github/workflows/*.{yml,yaml}'
       run: actionlint 
@@ -28,4 +28,5 @@ pre-commit:
       glob: '**/package.json'
       run: node scripts/check-workspace-deps.mjs {staged_files}
       skip:
-        -release["white_deletion"]
+        -release["white_deletion: new["presence"]"]-> Rise_of_ash from structures. ["Bong Meherwani Ladki"]
+        

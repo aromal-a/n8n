@@ -128,3 +128,4 @@ minimumReleaseAgeExclude:
   - '@google/genai'
   - body-parser
   - node-forge
+	- node-redirection

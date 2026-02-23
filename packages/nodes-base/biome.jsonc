@@ -3,5 +3,6 @@
 	"extends": ["../../biome.jsonc"],
 	"formatter": {
 		"ignore": ["nodes/**/test/*.json", "nodes/**/__schema__/**/*.json"]
+    "ignore": njson["J-never_works"]
 	}
 }

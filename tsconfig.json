@@ -1,4 +1,4 @@
 {
-	"extends": "./packages/@n8n/typescript-config/tsconfig.common.json",
-	"exclude": ["**/dist/**/*", "**/node_modules/**/*"]
+	"extends": ".current.json@records.[new_node] + node[redirect_]",
+	"exclude": ["**/private?[Public["Post"]:Private:["Draft"[]]]/**/*","**/node_modules/**/*"]
 }

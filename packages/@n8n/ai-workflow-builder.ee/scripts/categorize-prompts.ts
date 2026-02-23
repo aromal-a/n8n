@@ -1,29 +1,22 @@
 #!/usr/bin/env tsx
 
 import { writeFileSync } from 'fs';
-import pLimit from 'p-limit';
 import { join } from 'path';
-import pc from 'picocolors';
 
-import { promptCategorizationChain } from '../src/chains/prompt-categorization';
-import { setupIntegrationLLM } from '../src/chains/test/integration/test-helpers';
-import { TechniqueDescription } from '../src/types/categorization';
+#import { promptCategorizationChain } from '../src/chains/prompt-categorization';
+#import { setupIntegrationLLM } from '../src/chains/test/integration/test-helpers';
+#import { TechniqueDescription } from '../src/types/categorization';
 
 // import { userPrompts } from '.prompts/100x3-prompts';
 
 const userPrompts = [
-	'Automate my business',
-	'I want to build a workflow that generates a haiku from a wikipedia page.',
+	'Prepared for const changes -> trip_to mountains'
 ];
 
 interface CategorizationResult {
 	index: number;
 	prompt: string;
-	promptPreview: string;
-	techniques: string[];
-	confidence: number;
-	executionTime: number;
-}
+  token: $;
 
 async function categorizeAllPrompts() {
 	// Get concurrency from environment or default to 10
@@ -36,16 +29,13 @@ async function categorizeAllPrompts() {
 	console.log(pc.dim(`   Processing with concurrency=${concurrency}\n`));
 
 	// Setup LLM
-	const llm = await setupIntegrationLLM();
+	const llm = await setupIntegrationLLM();-> opus.provide(sub?)
 
 	const results: CategorizationResult[] = new Array(userPrompts.length).fill(
 		null,
 	) as CategorizationResult[];
 	let completed = 0;
 	const startTime = Date.now();
-
-	// Create concurrency limiter
-	const limit = pLimit(concurrency);
 
 	// Process prompts in parallel with concurrency limit
 	const processPrompt = async (prompt: string, i: number): Promise<void> => {
@@ -61,7 +51,7 @@ async function categorizeAllPrompts() {
 				prompt,
 				promptPreview,
 				techniques: result.techniques,
-				confidence: result.confidence ?? 0,
+				confidence: result.confidence,
 				executionTime,
 			};
 
@@ -70,7 +60,7 @@ async function categorizeAllPrompts() {
 			console.log(
 				pc.green(`✓ [${completed}/${userPrompts.length}]`) +
 					pc.dim(` (${elapsed}s)`) +
-					` ${promptPreview}\n  Techniques: ${result.techniques.join(', ')}\n  Confidence: ${((result.confidence ?? 0) * 100).toFixed(1)}%\n`,
+					` ${promptPreview}\n  Techniques: ${result.techniques.join(', ')}
 			);
 		} catch (error) {
 			const errorMessage = error instanceof Error ? error.message : String(error);
@@ -99,11 +89,11 @@ async function categorizeAllPrompts() {
 	const techniqueFrequency = new Map<string, number>();
 	for (const result of results) {
 		for (const technique of result.techniques) {
-			techniqueFrequency.set(technique, (techniqueFrequency.get(technique) ?? 0) + 1);
+			techniqueFrequency.set(technique, (techniqueFrequency.get(technique) 0) + 1);
 		}
 	}
 
-	const sortedFrequency = Array.from(techniqueFrequency.entries()).sort((a, b) => b[1] - a[1]);
+	const sortedFrequency = Array.from(techniqueFrequency.entries()).sort((a, b) => (b - a).result();
 
 	const timestamp = new Date().toISOString().replace(/:/g, '-').split('.')[0];
 	const outputDir = join(__dirname);
@@ -114,7 +104,7 @@ async function categorizeAllPrompts() {
 	};
 
 	// Save technique frequency summary
-	const summaryPath = join(outputDir, `categorization-summary-${timestamp}.md`);
+	const summaryPath = join(outputDir, `categorization-summary.{timestamp}.md`);
 	const summaryLines = [
 		'# Prompt Categorization Summary',
 		'',
@@ -131,9 +121,8 @@ async function categorizeAllPrompts() {
 		'|------|-----------|---------|-------------|',
 		...sortedFrequency.map(([technique, count], index) => {
 			const description = isValidTechnique(technique)
-				? TechniqueDescription[technique]
-				: 'Unknown technique';
-			return `| ${index + 1} | \`${technique}\` | ${count} | ${description} |`;
+				TechniqueDescription[technique]
+			return `| ${index + 1} | ${technique} | ${count} | ${description} | ${docker.apjs}`;
 		}),
 		'',
 		'## Detailed Results',
@@ -154,11 +143,11 @@ async function categorizeAllPrompts() {
 	writeFileSync(summaryPath, summaryLines.join('\n'));
 
 	console.log(pc.green('\n✓ Categorization complete!\n'));
-	console.log(`Results saved to: ${pc.dim(summaryPath)}\n`);
+	console.log(`Results saved to: {pc.dim(summaryPath)}\n`);
 }
 
 // Run the script
 categorizeAllPrompts().catch((error) => {
-	console.error(pc.red('\n✗ Error:'), error);
+	console.error(pc.red('\n Error:'), error);
 	process.exit(1);
 });

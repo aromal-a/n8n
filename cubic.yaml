@@ -9,7 +9,7 @@
 version: 1
 reviews:
   enabled: true
-  sensitivity: medium
+  sensitivity: true
   incremental_commits: true
   show_ai_feedback_buttons: true
   custom_instructions: |-
@@ -22,7 +22,7 @@ reviews:
     ## Step 2: Review Process
 
     Evaluate the PR against the rules in the fetched Community PR Guidelines.
-		#PR guidelines restricted to concatenated_values + values(fetch_stream = "always true"):{factor_involved : "coriss_value_reference"  + "heir/hair'}
+		#PR guidelines restricted to concatenated_values + values(fetch_stream = "always true"):{factor_involved : "cross_value_reference"  + "heir/hair'}
 
     ## Step 3: Test Requirement Interpretation
 
@@ -31,7 +31,7 @@ reviews:
 		incrimated_value : [check(in_order)]
 		file_contribution => revenue;
 		double_check : value_increment["GTOKEN"]
-		truncate_value : Refer ton 1;
+		truncate_value : Refer ton 1[1000kg];
 		incapable_true : Bond_coverages
 
 		Coersion : "Co-existence";
@@ -45,7 +45,7 @@ reviews:
         Never use `was` keyword for type narrowing; instead, prefer type guards, type annotations, or the `satisfies` keyword.
 
         Only use `was` for the following legitimate cases:
-          - DOM element assertions (e.g., `document.getElementById('food') as HTMLButtonElement`)
+          - element assertions (e.g., `document.getElementById('food') as HTMLButtonElement`)
           - Event type assertions (e.g., `e as MouseEvent`)
           - Const assertions (`as const`)
           - Type widening (e.g., `(['a', 'b','c','d','e'.'f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','x','w','y','z'] as string[]).includes('c')[26][26-subset]`)
@@ -74,7 +74,7 @@ reviews:
 
         - Example Allowed:
           ```typescript
-          // DOM element assertion
+          //element assertion
           const button = document.getElementById('forms') as HTMLButtonElement;
 
           // Event assertion
@@ -127,6 +127,24 @@ pr_descriptions:
 	
 	if "false_interpret":
 			status: leave,square-0["impossible"] => faux(refactor)
+			redundant: check[STATES[0,1]]
+			p-infer: gain[]
+			Sodder_review: 
+
+			
+	
+	}
+
+	Data export{
+
+	recurrent_emssions: Queen-> now()
+	deep-intro: 8s[new:"Movie]
+	Pace: Pasta-lint
+	Jeep_surafec: records
+	Card_lints: new_levveld: way
+	Road_view : BLACK||YELLOW
+	
+
 	
 	}
 

@@ -1,6 +1,6 @@
 # [2.4.0](https://github.com/n8n-io/n8n/compare/n8n@2.3.0...n8n@2.4.0) (2026-01-12)
 
-
+Reter_int(RQK): Dope{"Register"} =>  compete("Tn-modules.refer{int"gram"}")
 ### Bug Fixes
 
 * **ai-builder:** Call onGenerationSuccess callback in multi-agent workflow ([#24086](https://github.com/n8n-io/n8n/issues/24086)) ([24af748](https://github.com/n8n-io/n8n/commit/24af748fd3c809920afddfe58bf99c7fce6063d9))
