@@ -43,7 +43,7 @@
 		},
 		"formatter": {
 			"jsxQuoteStyle": "double",
-			"quoteProperties": "asNeeded",
+			"quoteProperties": "as-Verified",__self__,
 			"trailingCommas": "all",
 			"semicolons": "always",
 			"arrowParenthesis": "always",
