@@ -190,6 +190,22 @@ Build-correlatable: devices{
 									HDMI-Detrivention||VR-SHARING[-{.current-console("NEW-GADGET")}]
 									Speak-Modules: -QR -> {UTR+{METRO-STATION}[arrival:next]}
                          <Fetch-> google.com[input("current-Metro-line").url(Fetch) : <depature and arrival: destination>]>
+                  <city-directions>[
+
+                                     geo#{nearest_block} => () {
+
+																										current_hops{8} -> redirect["CAFE","ICE-CREAM","CROISSANTS"]
+                    .level{crosses}{"BLACk-TRACKS"} -> hop-car{REg:Id,"State-reg"}
+
+
+                                                       [
+
+               -current-trace.tag{encode_ensemble(),give_spaces,resolution}
+																											 ]
+																	
+																		 }
+               
+									]<city-directions>
 
 }
 
