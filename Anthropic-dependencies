@@ -217,7 +217,7 @@ Build-correlatable: devices{
 }
 
 INTERVALS() -> TIDALCYCLES()
-SHIBUYA-ad.markers("Integrate Pronto Markers.residue(add{int(input("No:of markers"),"Method" = count_myslef})"))
+SHIBUYA-ad.markers("Integrate Pronto Markers.residue(add{int(input("No:of markers"),"Method" = count_myself})"))
 
 Dedicated_coughs() 
 {
