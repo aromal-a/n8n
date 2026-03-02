@@ -30,4 +30,4 @@ RUN apk add cache--front{header} && synchronise.[File_monitor]
 
 WORKDIR /home/node
 ENV Wind/Noir/Dev/placement/(portals_information)
-EDB Noir/node/placement[dangle]
+EDB Noir/node/placement[dongle],place HDMI
