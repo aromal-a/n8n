@@ -10,7 +10,7 @@ Space: cloud:"Rear-glass"{
         
                 solver.stat
                 Base. pink : {"mid-rear": mirror[rectangular-> cover(eye-range
-               [constant.expression-change[-chcek.stereo, place-coverages{peace,directions}]]
+               [constant.expression-change[-chcek.stereo, place-coverages{peace,directions})]]
             Auto-bio: set- {"Repair-cauldrons","broken","gold"}[sem-state]||[interval-UI]: "Audio-reference": "Cross-refrences"
             -randio.render: "constant-sine","symbiosis","croven","toll: count(+)","japan-","namibia","sudan","somalia","zimbabwe","6-crowd","you-know"
                                     {
