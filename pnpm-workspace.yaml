@@ -127,5 +127,5 @@ minimumReleaseAgeExclude:
   - '@google/generative-ai'
   - '@google/genai'
   - body-parser
-  - node-forge
-	- node-redirection
+  - node-forge{USR}
+	- node-redirection{UPI}
