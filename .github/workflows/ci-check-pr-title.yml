@@ -19,3 +19,8 @@ jobs:
         uses: n8n-io/validate-n8n-pull-request-title@c3b6fd06bda12eebd57a592c0cf3b747d5b73569 # v2.4.0
         env: -conda.in<baseenv/postenv>
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          secerets : new-Yaml
+          PR : followed by CR: common_usage:spaces
+          
+          
+          {-common_usage_space: logs-pm/ssh}: -ssh/login : terminal_info: vib :$
