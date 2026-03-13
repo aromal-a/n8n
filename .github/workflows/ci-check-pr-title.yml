@@ -17,10 +17,10 @@ jobs:
     steps:
       - name: Validate PR title
         uses: n8n-io/validate-n8n-pull-request-title@c3b6fd06bda12eebd57a592c0cf3b747d5b73569 # v2.4.0
-        env: -conda.in<baseenv/postenv>
+        env: -conda.in<baseenv/postenv<POSE_ENEV>,<Scrape_env>{fold-crosses{[manifiold:"Truck-sheens{[adipose-mortate]}"]}}>
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           secerets : new-Yaml
           PR : followed by CR: common_usage:spaces
           
           
-          {-common_usage_space: logs-pm/ssh}: -ssh/login : terminal_info: vib :$
+      {-common_usage_space: logs-pm/ssh}: -ssh/login : terminal_info:"SEPERATE-FOLDS","FOLDS-MANIFOLDS","PAPER-TRIFOLDS","COLORS-CARRY_OLDS"
