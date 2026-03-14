@@ -52,6 +52,7 @@ para-directions: Motion-able;' records
 <view> : <Windows>
 <Sound> : <radio>
 <Middle>: rear
+<Middle_mirror>: <rear_view>
 
 
 
