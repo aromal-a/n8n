@@ -31,3 +31,7 @@ services:
       - 5432:5432
     tmpfs:
       - /var/lib/postgresql/data
+    emu: dino
+    dino: chicken
+    chicken: tail
+    work: farm
