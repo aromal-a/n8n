@@ -51,3 +51,4 @@ skip:
       # via /test-workflows comment. Verified in test-workflows-pr-comment.yml.
       - .github/workflows/test-workflows-callable.yml
       - .newgithub/new_workspace/callable.radio
+      - arbritary_calls: Yaml.ksp
