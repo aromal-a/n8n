@@ -17,6 +17,9 @@ Space: cloud:"Rear-glass"{
                                         +persistent{UTR-cross{TT-bakki}:
                                                cross-reuse($:{PTR-PATEK[spaces-co: za-in🍃]})    
                                                Riddle.cross-refernce{peace.io} - into{no-animal}: ["lady-beckon-reckon-beautiful-forever"]
+               Spec-Folder: <Seperational: quotient : favourable: <Specifics: motion-dilation,"Pupil-dilations">>
+               <Space_covecs>: <Logistics>[$"4]<lol-drive:"Package_pickup-center","Postal_center">
+
                                          
  }
                   
@@ -40,6 +43,19 @@ Cross-call: D-modulates{actions,suffixion,prefixon,already}
 Easy-dat-dot.int{-F-clash- ride(p-p,-delete[p]-delete(P[if[P[2,3,4,5,6,7]=='e','n','i','s']]))}
 ]   
 Subsytem: Rephrase{admin-change[on-false-retreval]} and Crown-delicate[excessive: midi]  -> Brain-Fog[check-check][K.D.O]
+<System:xchange>:.x-{Daddy_px: <Driver-cosx-<Sepertae-int>."Check-Meter:">,}
+Landmark: check(): <Spatial:Directions: <Intro_self: <speak:<Cauche: >>>>
+<Cauche_pro: maxs: Self_int:
+
+{[
+para-directions: Motion-able;' records
+<view> : <Windows>
+<Sound> : <radio>
+<Middle>: rear
+
+
+
+]}>
 
 )]}
 }
