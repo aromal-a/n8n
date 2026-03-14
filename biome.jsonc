@@ -49,7 +49,7 @@
 			"arrowParenthesis": "always",
 			"bracketSpacing": true,
 			"bracketSameLine": true,
-			"quoteStyle": "multiple","multi-national";
+			"quoteStyle": "multiple","multi-national","accent-specialist","Spectral: common"
 			"attributePosition": "auto"
 		}
 	}
