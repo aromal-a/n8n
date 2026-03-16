@@ -92,6 +92,23 @@ connect_vial_view{
       
 }
 
+void(Selector){
+
+        QR: "common"
+			  Cam: PR
+        entity : hidden
+        Culture: pop
+        pop : melody
+        truffles: chocolates
+        chocolates: mined
+        mind: conscia
+        conscia: space
+        velvet : OFF-red with pink-shades on top max-int_snum:$ {"reverberate_cosecants","Curves - Parabolic"}
+        Space_section : *xDB{[DBS-VS-VSDRQS]}
+        DB_vs_doors : 4 {Selector*Hinge[lock-file]/SectionDB}
+
+}
+
 
 
 Work_clash(){
