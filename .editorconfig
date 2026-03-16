@@ -45,7 +45,7 @@ Cold_root: keep{num} + giver_config
 hoff_spring : boot: taker{false_elliot}
 
 
-trunken_value : di-mat[ratio*cold_num]
+trunken_value : di-mat[ratio*cold_num]||Cold_core : ts_file/sx/VR
 
 
 
