@@ -7,7 +7,7 @@ frequency.def(){
 --mkdir calculations.md
 os_shift  = change_to["IOS",'Windows','Linux']
 
-IOS.options = change_log[->croud_fund]{"Title + Price: wallet?"} 
+IOS.options = change_log[->crowd_fund]{"Title + Price: wallet?"} 
 sustenance = 0
 }
 ground_clearance
