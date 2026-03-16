@@ -27,6 +27,11 @@ ground_clearance
 						change-log["on-arrival","self-depictions"] || if AI's_numbered = token++{
 
 																use-count-sustenance.reviews{current_chat}
+																OPTIONS "DELETE_CURRENT_CHAT" , "KEEP_CURRENT_CHAT"
+																SECTION:USAGE{[TS.<MD_REVIEW>]}
+																MD_CLASH : CX-QUOTIENT
+																QUOTIENT-DIVISION : SEPARTE {IN 0 : <DIRECT-C/CLASH/COMMON2>}
+																
 																
 						
 						}@ChatBot:UI:Integration(){
@@ -44,3 +49,6 @@ ground_clearance
 		@separte_interventions: <user_manual: directorate>
 		@spaces_given : <Seperate:state["Specular-Seperate-modules"]>
     @Siphons_indicate: <Motion:driven> -> "paraphrases" : "maximum-surfaces" : "Spaces-driven"
+		@Mass_depictions : <caution:state> [Jp-spring[TR.],[Uk],[US],[tethered_audio],[audio_frequency],[Frequency-Hertz],[Hertz-Distance],[Hertz-Seperation]]
+		@Entity_Quotient : place-pool {[tether:$ : Svr-common : Common-Ds[State_UI],[UI_chrome],[Console_ps]]}
+    
