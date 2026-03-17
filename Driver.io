@@ -53,7 +53,11 @@ para-directions: Motion-able;' records
 <Sound> : <radio>
 <Middle>: rear
 <Middle_mirror>: <rear_view>
-
+<Middle:shaft> : rear-Ac:>
+<Ac+ <Seat_down>: Sleeper>
+<Sleeper: Inclined : Driver : verical>
+<Eye-Sight- front-Mirror>
+<constraints - View: wheels-width: front-glas_width>
 
 
 ]}>
