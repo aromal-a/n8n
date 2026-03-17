@@ -12,7 +12,7 @@ couch:
 
   space:
     cloud: "Rear-glass"
-    solver: "stat"
+    solver: "static"
 
     base:
       pink:
