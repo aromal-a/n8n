@@ -1,70 +1,140 @@
-Same_system{
- 
-       Tooth.xchange(px;set-u-space[int].variants("gear","automatic"))
+tooth:
+  exchange:
+    px:
+      set_u_space:
+        int:
+          variants:
+            - gear
+            - automatic
 
-Couch{
+couch:
+  ready_mal: ".int$"
 
-    Ready-mal:, .int$
+  space:
+    cloud: "Rear-glass"
+    solver: "stat"
 
-Space: cloud:"Rear-glass"{
-        
-                solver.stat
-                Base. pink : {"mid-rear": mirror[rectangular-> cover(eye-range
-               [constant.expression-change[-chcek.stereo, place-coverages{peace,directions})]]
-            Auto-bio: set- {"Repair-cauldrons","broken","gold"}[sem-state]||[interval-UI]: "Audio-reference": "Cross-refrences"
-            -randio.render: "constant-sine","symbiosis","croven","toll: count(+)","japan-","namibia","sudan","somalia","zimbabwe","6-crowd","you-know"
-                                    {
-                                        +persistent{UTR-cross{TT-bakki}:
-                                               cross-reuse($:{PTR-PATEK[spaces-co: za-in🍃]})    
-                                               Riddle.cross-refernce{peace.io} - into{no-animal}: ["lady-beckon-reckon-beautiful-forever"]
-               Spec-Folder: <Seperational: quotient : favourable: <Specifics: motion-dilation,"Pupil-dilations">>
-               <Space_covecs>: <Logistics>[$"4]<lol-drive:"Package_pickup-center","Postal_center">
+    base:
+      pink:
+        mid_rear:
+          mirror:
+            shape: rectangular
+            cover:
+              eye_range:
+                constant_expression_change:
+                  check_stereo: true
+                  place_coverages:
+                    - peace
+                    - directions
 
-                                         
- }
-                  
-                                    }
+    auto_bio:
+      set:
+        - Repair-cauldrons
+        - broken
+        - gold
+      sem_state: true
+      interval_ui: true
+      audio_reference: Cross-references
 
+    randio_render:
+      constants:
+        - constant-sine
+        - symbiosis
+        - croven
+      toll_count: "+"
+      locations:
+        - japan
+        - namibia
+        - sudan
+        - somalia
+        - zimbabwe
+      crowd: "6-crowd"
+      note: "you-know"
 
-Go-pro: <riddle-patience>[
+      persistent:
+        utr_cross:
+          tt_bakki: true
+          cross_reuse:
+            ptr_patek:
+              spaces_co: "za-in🍃"
 
-              -system.cover-{user-rate{p.O}.guarantee}
-             int-space: Subsystems{-diddle<gear>}
+        riddle_cross_reference:
+          source: peace.io
+          constraint: no-animal
+          phrases:
+            - lady-beckon-reckon-beautiful-forever
 
-     <int-name: Taken-station,"pillar:no","user-track","current-track">["phase-changes- Directive"]
-     <npio>-modem : intake- satio- ed-intpal{modula-tricate}
+    spec_folder:
+      separational:
+        quotient:
+          favourable:
+            specifics:
+              - motion-dilation
+              - pupil-dilations
 
+    space_covecs:
+      logistics:
+        value: 4
+        lol_drive:
+          - Package_pickup-center
+          - Postal_center
 
-Use:state:-> False:<Driver.p-max[err-after[destination]]>
-<client-retrieval(Car-in/source) and aversion(Car-out/Destination)>{U-cross{mirror-peak}:ordinance-relevance}||HQ-DAT[kk-Ao-Infer(recur(Tri-modulates))]
-<ESINT-sections>["UP","Down"] -> whole(0,poth-.)|| aversion.Q-not[singular]-> plural- dimeaning,dimensions
-AP- Forked_int: Sans-Sans-Modular{thumb-nail bracket()}. Avert APR- refrences
-Cross-call: D-modulates{actions,suffixion,prefixon,already}
-Easy-dat-dot.int{-F-clash- ride(p-p,-delete[p]-delete(P[if[P[2,3,4,5,6,7]=='e','n','i','s']]))}
-]   
-Subsytem: Rephrase{admin-change[on-false-retreval]} and Crown-delicate[excessive: midi]  -> Brain-Fog[check-check][K.D.O]
-<System:xchange>:.x-{Daddy_px: <Driver-cosx-<Sepertae-int>."Check-Meter:">,}
-Landmark: check(): <Spatial:Directions: <Intro_self: <speak:<Cauche: >>>>
-<Cauche_pro: maxs: Self_int:
+go_pro:
+  riddle_patience: true
 
-{[
-para-directions: Motion-able;' records
-<view> : <Windows>
-<Sound> : <radio>
-<Middle>: rear
-<Middle_mirror>: <rear_view>
-<Middle:shaft> : rear-Ac:>
-<Ac+ <Seat_down>: Sleeper>
-<Sleeper: Inclined : Driver : verical>
-<Eye-Sight- front-Mirror>
-<constraints - View: wheels-width: front-glas_width>
+  system_cover:
+    user_rate:
+      pO: guarantee
 
+  int_space:
+    subsystems:
+      - diddle: gear
 
-]}>
+  int_name:
+    taken_station: true
+    pillar: "no"
+    user_track: true
+    current_track: true
+    phase_changes: Directive
 
-)]}
-}
-   
-}
- 
-}
+  modem:
+    npio: true
+    intake: satio
+    ed_intpal: modula_tricate
+
+  state:
+    driver_p_max:
+      error_after: destination
+      enabled: false
+
+  client_retrieval:
+    car_in: source
+    car_out: destination
+    cross:
+      mirror_peak: ordinance_relevance
+
+  esint_sections:
+    - UP
+    - Down
+
+  system_exchange:
+    daddy_px:
+      driver_cosx:
+        separate_int: true
+      check_meter: true
+
+landmark:
+  spatial:
+    directions:
+      intro_self:
+        speak:
+          couche: true
+
+  couche_pro:
+    maxs:
+      self_int:
+        para_directions: motion_able
+        records: true
+        view: windows
+        sound: radio
+        middle: rear
