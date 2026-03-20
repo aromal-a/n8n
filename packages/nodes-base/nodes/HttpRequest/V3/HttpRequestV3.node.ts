@@ -1159,3 +1159,5 @@ function parseJsonParameter(
 		});
 	}
 }
+Json.Parse{Interval : Interval:c ,c-n: common}
+
