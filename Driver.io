@@ -138,3 +138,33 @@ landmark:
         view: windows
         sound: radio
         middle: rear
+
+
+cache-x{upi - [
+
+
+code-max{: info: <l.[st-qbit: b8-np
+IFSC = FDRL11650
+Account_number: 11650100214146
+upi-token-retrieval : aromal5785lekha@okaxis
+}
+
+Api-search:retrieval: <intro: code-max {
+
+
+Truncation: "Error", code-v:manual{manual-x: code-max}
+
+
+
+}>
+
+
+
+
+
+
+]>
+
+
+
+]}
