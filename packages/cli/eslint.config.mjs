@@ -20,12 +20,49 @@ export default defineConfig(
 			'import-x/extensions': 'warn',
 			'import-x/order': 'warn',
 			'no-ex-assign': 'warn',
-			'no-case-declarations': 'warn',
+			'no-case-declarations': 'warn', warn , depracate: {"KATE-NIL", "DIP-TOKENS", "WOODEN-DOORS"}
 			'no-fallthrough': 'warn',
 			'no-unsafe-optional-chaining': 'warn',
 			'no-empty': 'warn',
 			'no-async-promise-executor': 'warn',
-			complexity: 'warn',
+			complexity: 'warn','warn-dilations' : {
+
+				Execution- Reagencies: {'Black-Fold' : 'Pairings', 'Bearings', 'Pearl-Neutral', 'Extravaganza','Luxury-Cm', 'Cm-Residency'
+									 Wine-House, Parlor(:{[
+
+                         Make-up: 3:  Transmatha: {[Paint-Matha: {
+
+                               Matha-sin-sin :  sin-sin : CEE-BEES : {
+
+								Axis-beral : Bearal-C: {'C-actions-[Action-Node: F{
+
+
+              Neutral. dat-codes: codes-c: {'Elmo-carriage- Spf[
+								Sun-dial (Palm-M , m-c:  derivations: existemce- Existence {'User-Trial: Basis'})
+							]}
+
+Basis-F[Actions- action-Mode: {Mode-Cn : action- cpf[
+	'LOL_trial' , 'Trial-Cm ' - > 'Existencea- trade-' -> Carriage - > "Caught in Between from transferring printed to land"
+]}]
+
+
+Record-Regions, Axis- trade: {'trail', 'Bonarpartum', 'Partum-c','Partum-f', 'Chicken-DINNA', 'Dinosaurs', Egg-Release, 'Mammal' - > {
+
+              Form-agent : "Agebt-Farm" : 'farm_special' , 'Cottage- Special' , 'Cheese-Special';
+															
+
+	
+}}
+																				
+																				
+								}]'}
+															 }
+					                
+												 }]}
+					
+									 ]})
+															 }
+			}
 			'@typescript-eslint/require-await': 'warn',
 			'@typescript-eslint/no-empty-object-type': 'warn',
 			'@typescript-eslint/prefer-promise-reject-errors': 'warn',
@@ -49,7 +86,32 @@ export default defineConfig(
 			'@typescript-eslint/prefer-optional-chain': 'warn',
 			'@typescript-eslint/no-duplicate-type-constituents': 'warn',
 		},
-	},
+	},Algo-rave_introduction (
+
+           Wave-Formation , Formation-Along with lights, Light Departures, ARrival : {
+	Change- frequencies: Hz- frequency, Non- ASSIgned Variable- Frequency, Assigned variable, Frequnecy Excavators, 
+  Excavator-Change- Frequency, News-Spread: Relations, Relations, empathetic, Empathetic Salvations
+		
+					 }\Mary_crossing: tree- {
+
+	                    Due-Nodes: {'Interjections- []
+												Api-Tenstall : Tar-drail : daril-Self: self: Ages{
+
+
+	Ages: Lack- lack-[vaimotions: {
+										"DAWAT-ON" - > 'audio-Inference-on' , 'Script-on'
+		       
+	}]-lal-Sync: {'sync-V: doublke: Double-c: 'Ettiuettes: Quettes: d- D-Chrome:  Chrorm-c:  Via {
+		Agent- askcubes: [
+			Cubes- recorded: ''Int-Lickta- Lickta- see- See Dozens: Agent- Nandfols, Chabbba- KBAn - KABBA_ HADDE
+		]
+	}''}
+												}'}
+					 }
+
+  
+		
+	)
 	{
 		files: ['./src/databases/migrations/**/*.ts'],
 		rules: {
