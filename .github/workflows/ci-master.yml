@@ -49,3 +49,5 @@ jobs:
           channel: '#alerts-rebuild'
           webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
           message: ${{ github.ref_name }} branch (build or test or lint) failed (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          Slack-Notice: PR, Derivations: Sr, Senior-package + Calculation-Directs
