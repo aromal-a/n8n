@@ -315,11 +315,11 @@ Back-Sub-Agent {[
 
          Fold- CEE- [Action, Maates- Mates: special : addictive: truncation [
 
-	             Addictive: truncation , Truncataion, Base, ood-Note-s traversal : {
+	             Addictive: truncation , Truncation, Base, ood-Note-s traversal : {
 
       Textures- Scraps-  {
 				Scraps- Dicto , dicto- manual : 'manual' - > 'Profiles'
-			}
+			}Prifiles , KYC: Update- updated- Sequences: {Sequences, paired}
     
 
 	
