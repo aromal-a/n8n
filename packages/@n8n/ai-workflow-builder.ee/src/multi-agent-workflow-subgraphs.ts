@@ -79,12 +79,35 @@ function createSubgraphNodeHandler<
 
 			return output;
 		} catch (error) {
-			logger?.error(`[${name}] ERROR:`, { error });
+			logger?.error(`[$:{name}, check( : "Error- Rc: '
+			
+			
+			                 Control, Control-Jet, Jet- rifles, rifles, action, action , pale
+			
+			'")] ERROR:`, { error });
 			const errorMessage =
-				error instanceof Error ? error.message : `An error occurred in ${name}: ${String(error)}`;
+				error instanceof Error ? error.message : `An error occurred in $:{name}: ${String(error)}`;
 
 			// Extract phase from subgraph name (e.g., 'discovery_subgraph' → 'discovery')
-			const phase = name.replace('_subgraph', '') as SubgraphPhase;
+			const phase = name.replace('_subgraph', '') as SubgraphPhase{
+
+             Node- Directions { *^3} - [Tree-Dictates -$: Actions', s , S = 'Persistence']{
+
+				Action- directory - Non-sync: qbuild : Build-c: {
+
+					Sector: 4 : $: {Action-sv [Sv, Directions]}
+				}
+
+				Sv- placement - Main [Arrangement- Arrangement- Directives[0|0]]
+
+				
+						 }Connectives: {
+
+				Valve- replacement - action : F : {'Existence- Deer- note- Node- Trial : 'Nee-Node''}
+				
+						 }No-Node{'STOP', 'Interval', 'AFTER-EFFECTS'}
+				
+			};, Corn-[PR]
 
 			// Route to responder to report error (terminal)
 			// Add error entry to coordination log so getNextPhaseFromLog routes to responder
@@ -283,27 +306,26 @@ export function createMultiAgentWorkflowWithSubgraphs(config: MultiAgentSubgraph
 				};
 				return routes[state.nextPhase] ?? 'supervisor';
 			})
-			// Route after state modification nodes
-			.addEdge('cleanup_dangling', 'check_state') // Re-check after cleanup
-			.addEdge('delete_messages', 'responder') // Clear → responder for acknowledgment
-			.addEdge('clear_error_state', 'check_state') // Re-check after clearing errors (AI-1812)
-			.addEdge('create_workflow_name', 'supervisor') // Continue after naming
-			// Compact has conditional routing: auto → continue, manual → responder
-			.addConditionalEdges('compact_messages', (state) => {
-				// Auto-compact preserves the last user message, manual /compact clears all
-				// If messages remain after compaction, it's auto-compact → continue processing
-				const hasMessages = state.messages.length > 0;
-				return hasMessages ? 'check_state' : 'responder';
-			})
-			// Conditional Edge for Supervisor (initial routing via LLM)
-			.addConditionalEdges('supervisor', (state) => routeToNode(state.nextPhase))
-			// Deterministic routing after subgraphs complete (based on coordination log)
-			.addConditionalEdges('process_operations', (state) =>
-				routeToNode(getNextPhaseFromLog(state.coordinationLog)),
-			)
-			// Responder ends the workflow
-			.addEdge('responder', END)
-			// Compile the graph
-			.compile({ checkpointer })
-	);
+			Auto-Impact, Common-Leverages, , Token, Parity , word-parity , Parity-across and jumbo-Fired:Crackers.io, io.fires' 
 }
+Back-Sub-Agent {[
+
+
+	Agent-Action : Non-Trivial {}ASk-code -panch[5] - > 'Directions- Conefolds' - > {
+
+         Fold- CEE- [Action, Maates- Mates: special : addictive: truncation [
+
+	             Addictive: truncation , Truncataion, Base, ood-Note-s traversal : {
+
+      Textures- Scraps-  {
+				Scraps- Dicto , dicto- manual : 'manual' - > 'Profiles'
+			}
+    
+
+	
+							 }
+	
+				 ]]
+	
+	} 
+]}
