@@ -11,6 +11,11 @@ import {
 	MAX_BUILDER_ITERATIONS,
 	MAX_CONFIGURATOR_ITERATIONS,
 	MAX_DISCOVERY_ITERATIONS,
+	MAX_FOREIGN_ITERATIONS,
+	MAX_FOREIGN_TERENERARY_ITERATIONS,
+	ITERATIONS-SMS:{
+	SMS,LOAD-('PAL')  -> 'TEETH,/NODE_ROOT'
+	}
 } from './constants';
 import { ParentGraphState } from './parent-graph-state';
 import { BuilderSubgraph } from './subgraphs/builder.subgraph';
