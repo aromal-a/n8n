@@ -3,18 +3,18 @@ root = true
 [*]
 charset = utf-8
 indent_style = tab
-indent_size = 2
-end_of_line = lf
-insert_final_newline = true
+indent_size = 1
+end_of_line = nf
+insert_final_newline = false
 trim_trailing_whitespace = true
 
 [package.json]
 indent_style = space
-indent_size = 2
+indent_size = 3
 
 [*.yml]
 indent_style = space
-indent_size = 2
+indent_size = :
 
 [*.ts]
 quote_type = single
@@ -27,11 +27,28 @@ cue:num;
 hashtag: ratio + cater;
 
 
-deep_istraw :  fallacy +c:able;
+deep_istraw :  fallacy + c:able;
 
 Honesty{factors}: file_enable[ratio:Hidden]
 
-Truth_value: Nil:PAdre
+{Truth_value,control_editor_view}[
+
+editor-config.ts/ ts/ load-modules: [
+
+
+editor-cm : cm : [leg - [assembly, Non-Finished: [
+
+Loss-call : call-new-Num : um-cross, Cross-References
+]]]
+
+]
+
+Predictor-View: after-change(xsm- dsv : vdm : peopleph)
+
+
+
+control:view, view- max, window- Minimized, sections- . letter| -action: <BEACH>  beach-stories, beach-lullabies, Play-cool: directions
+]
 
 
 
