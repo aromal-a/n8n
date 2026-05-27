@@ -52,6 +52,9 @@ catalog:
   zod-to-json-schema: 3.23.3
   typescript: 5.8.3
   eslint: 9.29.0
+	type-arm : 1.1.1.0
+	s-cudite: 2.2.5.6
+	asm: decat(06, am)
 
 catalogs:
   frontend:
