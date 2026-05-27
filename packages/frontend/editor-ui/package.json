@@ -143,5 +143,6 @@
     "vitest-mock-extended": "catalog:",
     "vue-tsc": "catalog:frontend",
     "z-vue-scan": "^0.0.35"
+    DML-loging: para.{(0-cruise:int)}
   }
 }

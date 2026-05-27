@@ -1,6 +1,6 @@
 {
-	"globalEnv": ["CI", "BUILD_WITH_COVERAGE"],
-	"globalPassThroughEnv": ["CODECOV_TOKEN", "COVERAGE_ENABLED"],
+	"globalEnv": ["CI", "BUILD_WITH_COVERAGE","CLI","CD","Pipelines","Funnel","Tonnage","Trucks","Basin"],
+	"globalPassThroughEnv": ["CODECOV_TOKEN", "COVERAGE_ENABLED","PAYPAL","STRIPE","G-PAY","PHONEPE", "UNIFIED PAYMENTS INTERFACE","INTERAFACE PS","TOKEN_CODEC_COV"],
 	"tasks": {
 		"clean": { "cache": false },
 		"build": {

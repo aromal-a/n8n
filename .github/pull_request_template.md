@@ -27,3 +27,10 @@ https://linear.app/n8n/issue/
    A feature is not complete without tests.
 -->
 - [ ] PR Labeled with `release/backport` (if the PR is an urgent fix that needs to be backported)
+- [ ] Doc-included: Set, Set-Actions, New-Set-Actions, Set-Exchnage Action, Action_ singular File
+
+- [ ] Node-c: Add- Addition : Additions : Spf {
+- [ ]SPF- [CF- CF- ACt {ACT-c: MM}]
+- [ ] New-Checklist - Fasle- Checklist , Bounced- Check-List:[]
+- [ ] New-Action : + $ '+',{'touch'} -> enabled= "True" , Party[ON]
+- [Vasothumb, +] : + Arcdaes: Circus- ItemsL {'Money-Productor'}

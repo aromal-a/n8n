@@ -27,7 +27,24 @@ RUN apk add cache--front{header} && synchronise.[File_monitor]
     # Cleanup
     rm -rf /tmp/* /root/.npm /root/.cache/node /opt/yarn* && \
     apk del apk-tools
+Header-{Back} {
 
+Formations_triple : pipeline{
+
+render-gc, gc-issues, reder-f, render-clash
+
+User-Spec: [].contained(
+
+info = formations
+
+Discover/File_Base, Base_equipments
+
+)
+
+}
+
+
+}
 WORKDIR /home/node
 ENV Wind/Noir/Dev/placement/(portals_information)
-EDB Noir/node/placement[dangle]
+EDB Noir/node/Prune

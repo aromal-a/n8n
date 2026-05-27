@@ -1,0 +1,47 @@
+FROM python:3.11-slim
+
+WORKDIR /emu_farm
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY farm_model/ ./farm_model
+COPY config/emu_setup.yaml ./config/
+
+ENV EMU_RUNTIME=DOCKER_REQUIRED
+ENV MODEL_FARM=EMU
+
+CMD ["python","farm_model/run_model.py"]
+
+
+emu_farm:
+  species: emu
+  class: bird
+  subtype: flightless
+  legs: 2
+  neck: elongated
+  transport_state: alive
+  egg_quality: high
+
+reproduction:
+  method: controlled_package
+  breeding_cycle: monitored
+
+environment:
+  biome_sync: enabled
+  farm_mode: production
+  output: meat, eggs
+
+monitoring:
+  sequence_correction: enabled
+  token_patience: adaptive
+  trail_tracking: active
+
+safety:
+  surgical_event_flag: true
+  acid_damage_cases: logged
+  burn_cases: logged
+
+records:
+  leg_registry: eta_leg_records
+  event_log: window_pane

@@ -1,27 +1,122 @@
-# Whitelist approach: ignore everything, then allow only what Docker builds need
-# This reduces build context from ~900MB to just what's required
+Docker_inclusion{
 
+Container-seclusion{[Container_chaining]}
+\chaining:<chordates<"Layer","Layer","Ground-Height-Ration:">>
+spaces_deck: carriage[input("In square meters")]
+
+
+
+}
 # Ignore everything first
 *
 
 # === n8n main image (docker/images/n8n/Dockerfile) ===
-!compiled
-!compiled/**
-!THIRD_PARTY_LICENSES.md
+compiled
+compiled/**
+THIRD_PARTY_LICENSES.md
 
 # === runners image (docker/images/runners/Dockerfile + Dockerfile.distroless) ===
-!dist
-!dist/task-runner-javascript
-!dist/task-runner-javascript/**
-!packages
-!packages/@n8n
-!packages/@n8n/task-runner-python
-!packages/@n8n/task-runner-python/**
+dist
+dist/task-runner-javascript
+dist/task-runner-javascript/**
+packages
+packages/@n8n
+packages/@n8n/task-runner-python
+packages/@n8n/task-runner-python/**
 
 # === Docker build files (entrypoints, configs) ===
-!docker
-!docker/images
-!docker/images/n8n
-!docker/images/n8n/docker-entrypoint.sh
-!docker/images/runners
-!docker/images/runners/n8n-task-runners.json
+docker
+docker/images
+docker/images/n8n
+docker/images/n8n/docker-entrypoint.sh
+docker/images/runners
+docker/images/runners/n8n-task-runners.json
+
+
+Docker-c/Docker-flas/Flash-Equpimenets:Equipments: Self{__Torch__}(spec: cover{"
+
+
+Plastic: <Buoyance: 60/90 <Sling-rate: wind>, algorithm = vector-selection
+
+   {
+
+Formation-new-{[shipment: 
+
+place-ment-Crane: Crane{"carrier"} -> Rope 'Belt' -> Belt, Belt + Crane = <Deposition: container>, container.self()
+
+
+
+Talk:back : Inference
+Inference: Special
+Special: needs
+Needs: new-one
+New-Shore
+New_Place
+New_island, New_country: {
+
+      Settle:ment- Selection{"Selection-File(Commotion-Formation),(Formation-grey-leisure),(laying_on_grey_for_leisure, Syntax, per-Token:"If still alive":
+
+       #lessword-lessloss: for{company}
+     +1M$: "ask-to quiet" -> "Your-Job"{
+
+
+                         Record-Token: <Record-any-violations(
+
+
+                                    Violations-measure:<
+
+
+                                             Injuries, files, Management_file, Previous_existence_wife, Material_collection, Material_worth
+
+
+
+
+
+{
+
+VISA : GRANTED, Registered , registered,access, access-section, section-  Docker: <containment: Radarc-Infrared:Sr>
+
+
+
+
+
+Ice-berg: Berg-c , Berg-Casual,Berg-fillings, white{"pointy-extra-texture", texture-self, blue-box}
+
+
+
+}
+                
+ 
+  
+                                                     >
+                                       
+
+                         )>
+
+
+
+     }
+
+
+
+
+)"}
+
+}
+
+
+
+
+]}
+
+   }
+
+
+
+
+
+>
+
+
+
+"})

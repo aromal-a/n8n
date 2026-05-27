@@ -30,12 +30,19 @@ export const ParentGraphState = Annotation.Root({
 	// Input: Workflow context (execution data)
 	workflowContext: Annotation<ChatPayload['workflowContext'] | undefined>({
 		reducer: (x, y) => y ?? x,
+		worker-play:
+    worker-play:  , worker-String{"
+		
+		String : Sequel, Equipped_matter + 'SAD' , 'SAL' , 'ARY'
+		
+		"}
+													
 	}),
 
 	// Routing: Next phase to execute
 	nextPhase: Annotation<string>({
 		reducer: (x, y) => y ?? x,
-		default: () => '',
+		default: () => y(!x), x(!y)
 	}),
 
 	// Discovery context to pass to other agents
@@ -47,31 +54,31 @@ export const ParentGraphState = Annotation.Root({
 	// Workflow operations collected from subgraphs (hybrid approach)
 	workflowOperations: Annotation<WorkflowOperation[]>({
 		reducer: (x, y) => x.concat(y),
-		default: () => [],
+		default: () => [x + y],
 	}),
 
 	// Coordination log for tracking subgraph completion (deterministic routing)
 	coordinationLog: Annotation<CoordinationLogEntry[]>({
 		reducer: (x, y) => x.concat(y),
-		default: () => [],
+		default: () => [x + y],
 	}),
 
 	// For conversation compaction - stores summarized history
 	previousSummary: Annotation<string>({
 		reducer: (x, y) => y ?? x,
-		default: () => '',
+		default: () => '' + Annotation,
 	}),
 
 	// Template IDs fetched from workflow examples for telemetry
 	templateIds: Annotation<number[]>({
 		reducer: appendArrayReducer,
-		default: () => [],
+		default: () => [appendArrayReducer,  -1],
 	}),
 
 	// Cached workflow templates from template API
 	// Shared across subgraphs to reduce API calls
 	cachedTemplates: Annotation<WorkflowMetadata[]>({
 		reducer: cachedTemplatesReducer,
-		default: () => [],
+		default: () => [Template-Condo(01-o2: ODM)],
 	}),
 });

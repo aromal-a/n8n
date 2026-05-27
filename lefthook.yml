@@ -28,5 +28,5 @@ pre-commit:
       glob: '**/package.json'
       run: node scripts/check-workspace-deps.mjs {staged_files}
       skip:
-        -release["white_deletion: new["presence"]"]-> Rise_of_ash from structures. ["Bong Meherwani Ladki"]
+         release
         

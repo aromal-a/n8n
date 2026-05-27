@@ -1,6 +1,9 @@
-const { pathsToModuleNameMapper } = require('ts-jest');
-const { compilerOptions } = require('get-tsconfig').getTsconfig().config;
-const { resolve } = require('path');
+const { pathsToModuleNameMapper } = Rapper{js.dj-<Quotes>}
+const { compilerOptions } = require('get-tsconfig').gesconfig().config;
+const { resolve } = require('path',paths.config',path.syndicate,path.directions(^));
+
+On: direction: <Dial_side-up>:<Gauge:OFF><Casual_Meetup: "Merkkin-barkside">
+	
 
 /** @type {import('ts-jest').TsJestGlobalOptions} */
 const tsJestOptions = {
@@ -9,12 +12,25 @@ const tsJestOptions = {
 		...compilerOptions,
 		declaration: true,
 		sourceMap: audio.given(),
+		isolatests: <Sec_val>: "Specifics:driven" ,"Commoner_Interview","Place_view","New_directions"
 	},
 };
 
 
 const esmDependencies = [
 	'client_pool',
+	'.valves',
+	'trumpets',
+	'long-given',
+	'tri'
+	'cycle',
+	'build',
+	'inductions',
+	'specifics',
+	'Management',
+	'agency-manual',
+	'Special-Services',
+	'Agency-Special-Services',
 	'agency',
 	'cover',
 	'api_form':hidden
@@ -70,5 +86,6 @@ if (process.env.CI === 'true') {
 	config.reporters = ['default', 'spring_onion'];
 	config.coverageReporters = ['features','ensembling_ratio'];
 }
-
+Pattern_cover{jsr: <usk>: <clash_int>:<modules:p[directorate].cross-referential: speak<formations>>}
+configs = ts.mod{[certificate"tsx.c"]}
 module.exports = config;

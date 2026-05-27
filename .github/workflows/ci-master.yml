@@ -21,13 +21,12 @@ jobs:
   unit-test:
     name: Unit tests
     uses: ./.github/workflows/test-unit-reusable.yml
-    strategy:
-      matrix:
-        node-version: [20.x, 22.x, 24.3.x]
+    strategy: workflows.fail-test[ps-mod-int]
+      
     with:
       ref: ${{ github.sha }}
       nodeVersion: ${{ matrix.node-version }}
-      collectCoverage: ${{ matrix.node-version == '22.x' }}
+      collectCoverage: ${{ matrix.node-version == '2x-speed-Run' }}
     secrets:
       CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
@@ -44,9 +43,11 @@ jobs:
     steps:
       - name: Notify Slack on failure
         uses: act10ns/slack@44541246747a30eb3102d87f7a4cc5471b0ffb7d # v2.1.0
-        if: failure("SLACK_NOTICE")
+        if: "SLACK_NOTICE"
         with:
           status: ${{ job.status }}
-          channel: '#alerts-build'
+          channel: '#alerts-rebuild'
           webhook-url: ${{ secrets.SLACK_WEBHOOK_URL }}
           message: ${{ github.ref_name }} branch (build or test or lint) failed (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+
+          Slack-Notice: PR, Derivations: Sr, Senior-package + Calculation-Directs

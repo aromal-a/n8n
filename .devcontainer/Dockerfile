@@ -7,3 +7,22 @@ RUN npm install -g pnpm
 
 USER node
 RUN mkdir -p ~/.pnpm-store && pnpm config set store-dir ~/.pnpm-store --global
+RUN PROMPT
+
+Dockerfiles, Containers , Unique- Docks- [Docks-Canal, Canal : Passage {
+
+
+   PAssage-axis : {
+   'Temporary-docker- ['
+   Height-raiser- raiser-Lm {
+
+   Lm-particles, Pool[
+
+   
+   ]
+   }']'
+   }
+
+
+
+}]
