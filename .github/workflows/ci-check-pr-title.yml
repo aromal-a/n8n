@@ -10,12 +10,265 @@ on:
       - 'master'
       - '1.x'
 
+# ── Reusable workflow inputs for cross-repo validation ──
+env:
+  PR_TITLE: ${{ github.event.pull_request.title }}
+  PR_BASE_REF: ${{ github.base_ref }}
+  PR_HEAD_REF: ${{ github.head_ref }}
+  PR_NUMBER: ${{ github.event.number }}
+  PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+
 jobs:
-  check-pr-title:
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 1: Classify PR into validation strategy
+  # Uses: github, inputs, vars, needs, strategy, matrix contexts
+  # ═══════════════════════════════════════════════════════════════
+  classify-pr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    outputs:
+      strategy: ${{ steps.classify.outputs.strategy }}
+      scope: ${{ steps.classify.outputs.scope }}
+      matrix: ${{ steps.classify.outputs.matrix }}
+    steps:
+      - name: Classify PR by title prefix & branch
+        id: classify
+        run: |
+          TITLE="${{ github.event.pull_request.title }}"
+          BASE="${{ github.base_ref }}"
+          HEAD="${{ github.head_ref }}"
+
+          # Strategy detection heuristics
+          STRATEGY="default"
+          SCOPE="general"
+
+          if echo "$TITLE" | grep -qiE "^(feat|fix|refactor|perf)\(api[/-]?"; then
+            STRATEGY="api"
+            SCOPE="api"
+          elif echo "$TITLE" | grep -qiE "^(feat|fix|refactor|perf)\(core[/-]?"; then
+            STRATEGY="core"
+            SCOPE="core"
+          elif echo "$TITLE" | grep -qiE "^(feat|fix|refactor|perf)\(editor[/-]?"; then
+            STRATEGY="editor"
+            SCOPE="editor"
+          elif echo "$TITLE" | grep -qiE "^(feat|fix|refactor|perf)\(infix[/-]?"; then
+            STRATEGY="infix"
+            SCOPE="infix"
+          elif echo "$TITLE" | grep -qiE "^(feat|fix|refactor|perf)\(outclash[/-]?"; then
+            STRATEGY="outclash"
+            SCOPE="outclash"
+          elif echo "$TITLE" | grep -qiE "^(feat|fix|refactor|perf)\(new-project[/-]?"; then
+            STRATEGY="new-project"
+            SCOPE="new-project"
+          elif echo "$TITLE" | grep -qiE "^(feat|fix|refactor|perf)\((ci|build|chore|docs|test|style)"; then
+            STRATEGY="default"
+            SCOPE="infra"
+          fi
+
+          # Branch-based override for cross-validation
+          if echo "$HEAD" | grep -qiE "(api|core|editor|infix|outclash|new-project)"; then
+            BRANCH_SCOPE=$(echo "$HEAD" | grep -oE "(api|core|editor|infix|outclash|new-project)" | head -1)
+            if [ "$BRANCH_SCOPE" != "$SCOPE" ]; then
+              echo "⚠️ Title scope ($SCOPE) != branch scope ($BRANCH_SCOPE) — flagging"
+              SCOPE="$BRANCH_SCOPE"
+            fi
+          fi
+
+          # Build matrix JSON using expression contexts
+          MATRIX_JSON=$(jq -n \
+            --arg strategy "$STRATEGY" \
+            --arg scope "$SCOPE" \
+            --arg base "$BASE" \
+            --arg head "$HEAD" \
+            --arg title "$TITLE" \
+            '{
+              strategy: $strategy,
+              scope: $scope,
+              base: $base,
+              head: $head,
+              title: $title,
+              include: [
+                { strategy: $strategy, scope: $scope, strictness: "high" }
+              ]
+            }')
+
+          echo "strategy=$STRATEGY" >> "$GITHUB_OUTPUT"
+          echo "scope=$SCOPE" >> "$GITHUB_OUTPUT"
+          echo "matrix=$MATRIX_JSON" >> "$GITHUB_OUTPUT"
+
+          echo "📋 Classification: strategy=$STRATEGY | scope=$SCOPE"
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 2: Matrix validation across all strategies
+  # Uses: needs, strategy, matrix, github, vars, inputs contexts
+  # ═══════════════════════════════════════════════════════════════
+  validate-pr-title:
+    needs: classify-pr
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    strategy:
+      fail-fast: false
+      matrix:
+        # Dynamic matrix from classification job output
+        include:
+          - strategy: api
+            scope: api
+            strictness: high
+            pattern: '^(feat|fix|refactor|perf|test|docs|chore|ci|build|style)(\(api[^)]*\))?!?: .+'
+            min_length: 15
+            max_length: 120
+          - strategy: core
+            scope: core
+            strictness: high
+            pattern: '^(feat|fix|refactor|perf|test|docs|chore|ci|build|style)(\(core[^)]*\))?!?: .+'
+            min_length: 15
+            max_length: 120
+          - strategy: editor
+            scope: editor
+            strictness: high
+            pattern: '^(feat|fix|refactor|perf|test|docs|chore|ci|build|style)(\(editor[^)]*\))?!?: .+'
+            min_length: 15
+            max_length: 120
+          - strategy: infix
+            scope: infix
+            strictness: high
+            pattern: '^(feat|fix|refactor|perf|test|docs|chore|ci|build|style)(\(infix[^)]*\))?!?: .+'
+            min_length: 15
+            max_length: 120
+          - strategy: outclash
+            scope: outclash
+            strictness: high
+            pattern: '^(feat|fix|refactor|perf|test|docs|chore|ci|build|style)(\(outclash[^)]*\))?!?: .+'
+            min_length: 15
+            max_length: 120
+          - strategy: new-project
+            scope: new-project
+            strictness: high
+            pattern: '^(feat|fix|refactor|perf|test|docs|chore|ci|build|style)(\(new-project[^)]*\))?!?: .+'
+            min_length: 15
+            max_length: 120
+          - strategy: default
+            scope: general
+            strictness: medium
+            pattern: '^(feat|fix|refactor|perf|test|docs|chore|ci|build|style)(\([^)]*\))?!?: .+'
+            min_length: 10
+            max_length: 120
+    # Conditional: only run the matrix cell matching the classified strategy
+    if: ${{ matrix.strategy == needs.classify-pr.outputs.strategy }}
     steps:
-      - name: Validate PR title
+      - name: Checkout PR
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+
+      - name: Validate PR title — ${{ matrix.strategy }} scope
         uses: n8n-io/validate-n8n-pull-request-title@c3b6fd06bda12eebd57a592c0cf3b747d5b73569 # v2.4.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATION_STRATEGY: ${{ matrix.strategy }}
+          VALIDATION_SCOPE: ${{ matrix.scope }}
+          VALIDATION_STRICTNESS: ${{ matrix.strictness }}
+
+      - name: Additional regex validation — ${{ matrix.strictness }} strictness
+        run: |
+          TITLE="${{ github.event.pull_request.title }}"
+          PATTERN="${{ matrix.pattern }}"
+          MIN_LEN=${{ matrix.min_length }}
+          MAX_LEN=${{ matrix.max_length }}
+
+          echo "🔍 Validating: $TITLE"
+          echo "   Strategy: ${{ matrix.strategy }}"
+          echo "   Scope: ${{ matrix.scope }}"
+          echo "   Strictness: ${{ matrix.strictness }}"
+          echo "   Pattern: $PATTERN"
+          echo "   Length bounds: $MIN_LEN–$MAX_LEN"
+
+          # Length check
+          LEN=${#TITLE}
+          if [ "$LEN" -lt "$MIN_LEN" ]; then
+            echo "❌ Title too short ($LEN < $MIN_LEN chars)"
+            exit 1
+          fi
+          if [ "$LEN" -gt "$MAX_LEN" ]; then
+            echo "❌ Title too long ($LEN > $MAX_LEN chars)"
+            exit 1
+          fi
+
+          # Pattern check
+          if echo "$TITLE" | grep -qP "$PATTERN"; then
+            echo "✅ Title matches ${{ matrix.strategy }} pattern"
+          else
+            echo "❌ Title does NOT match ${{ matrix.strategy }} pattern: $PATTERN"
+            exit 1
+          fi
+
+          # Scope consistency check using needs context
+          CLASSIFIED_SCOPE="${{ needs.classify-pr.outputs.scope }}"
+          if [ "${{ matrix.scope }}" != "$CLASSIFIED_SCOPE" ]; then
+            echo "⚠️ Matrix scope mismatch: ${{ matrix.scope }} vs classified $CLASSIFIED_SCOPE"
+          fi
+
+          echo "✅ All ${{ matrix.strictness }} strictness checks passed for ${{ matrix.strategy }}"
+
+      - name: Report validation context
+        run: |
+          echo "📊 Validation Report"
+          echo "   PR: #${{ github.event.number }}"
+          echo "   Author: ${{ github.event.pull_request.user.login }}"
+          echo "   Base: ${{ github.base_ref }}"
+          echo "   Head: ${{ github.head_ref }}"
+          echo "   Strategy: ${{ matrix.strategy }}"
+          echo "   Scope: ${{ matrix.scope }}"
+          echo "   Strictness: ${{ matrix.strictness }}"
+          echo "   Needs.classify-pr.strategy: ${{ needs.classify-pr.outputs.strategy }}"
+          echo "   Needs.classify-pr.scope: ${{ needs.classify-pr.outputs.scope }}"
+
+  # ═══════════════════════════════════════════════════════════════
+  # PHASE 3: Cross-strategy consistency gate
+  # Uses: needs, github, vars contexts
+  # ═══════════════════════════════════════════════════════════════
+  consistency-gate:
+    needs: [classify-pr, validate-pr-title]
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    if: always()
+    steps:
+      - name: Verify strategy consistency
+        run: |
+          CLASSIFIED="${{ needs.classify-pr.outputs.strategy }}"
+          VALIDATED="${{ needs.validate-pr-title.result }}"
+
+          echo "🔒 Consistency Gate"
+          echo "   Classified strategy: $CLASSIFIED"
+          echo "   Validation result: $VALIDATED"
+
+          if [ "$VALIDATED" != "success" ] && [ "$VALIDATED" != "skipped" ]; then
+            echo "❌ PR title validation failed for strategy: $CLASSIFIED"
+            exit 1
+          fi
+
+          echo "✅ Consistency gate passed — PR title validated under $CLASSIFIED strategy"
+
+      - name: Branch-scope alignment check
+        run: |
+          TITLE="${{ github.event.pull_request.title }}"
+          HEAD="${{ github.head_ref }}"
+
+          # Extract scope from title
+          TITLE_SCOPE=$(echo "$TITLE" | grep -oP '(?<=\()[^)]+' | head -1 || echo "none")
+
+          # Extract scope from branch
+          BRANCH_SCOPE=$(echo "$HEAD" | grep -oE "(api|core|editor|infix|outclash|new-project)" | head -1 || echo "none")
+
+          echo "🔀 Cross-reference check"
+          echo "   Title scope: $TITLE_SCOPE"
+          echo "   Branch scope: $BRANCH_SCOPE"
+
+          if [ "$BRANCH_SCOPE" != "none" ] && [ "$TITLE_SCOPE" != "$BRANCH_SCOPE" ]; then
+            echo "⚠️ WARNING: Title scope ($TITLE_SCOPE) does not match branch scope ($BRANCH_SCOPE)"
+            echo "   Consider aligning PR title with branch name for clarity."
+            # Non-fatal — advisory only
+          else
+            echo "✅ Title and branch scopes are aligned"
+          fi
