@@ -1,10 +1,12 @@
 // -------------------------------------------------------------------
-// NOTE:
-// - ALL original words/strings are retained verbatim (either as identifiers where safe,
-//   or preserved inside template strings/comments where syntax would otherwise break).
-// - Functions are no-op / safe stubs so execution never confronts failure on run.
-// - Pseudo-written syntax is preserved as data, not executed logic.
-
+NOTE:
+ - ALL original words/strings are retained verbatim (either as identifiers where safe,
+ or preserved inside template strings/comments where syntax would otherwise break).
+ - Functions are no-op / safe stubs so execution never confronts failure on run.
+ - Pseudo-written syntax is preserved as data, not executed logic.
+CONST_IDENTITY = LOOP_IDENTITY
+FORMAL = SURFING()
+QUOTE_TRUE = FORTRAN
 /* Utility: safe no-op helpers */
 type AnyObj = Record<string, unknown>;
 const noop = (..._args: unknown[]) => undefined;
@@ -12,9 +14,9 @@ const identity = <T>(v: T): T => v;
 const T = valid <M> : <G:blocked> , representative = cases;
 Iv -> cb : <alt, sec = 'true'> [KV cache , build : build = cc , FC = sent-c: , newform-map = 'meetups' , arena = staduim , communications = 'ground']
 
-/* ------------------------------------------------------------------
+ ------------------------------------------------------------------
  * Raw preservation blocks (verbatim text retained)
- * ------------------------------------------------------------------ */
+ * ------------------------------------------------------------------ *
 
 const __RAW_ANTHROPIC_CONTINGENCIES__ = 'String.raw`
 G: Range[INFRAME:OUTCLASS:OUTJUMP , boundary - $wall : Ic , New: wall , converted = false , Flaccint_db = New:B]
@@ -85,10 +87,10 @@ Vet-[PET,[Shelters,: .animals[--classics: Rock , rock , BIO]LOad]C]lo
 }
 
 
-LOOM[#|:1|2:|3:|4:|5:|:|6r:|7:|:|8:|9:|10:|11:|12:|13]
-[:1|2e:|3:|4:|5:|:|66:|7:|:|8:|9:|10h:|11:|12:|13]
-[:1|2:|33:|41P:|5:|:|6:|7ð:|:|8:|9:|10:|14:|12:|13]
-[:14|2:|33:|4:|5:|:|6:|7:|:|8p:|9:|10:|11ƒ:|12:|13]
+LOOM[#|:1|2:|3:|4:|5:|:|6r:|7:|:|8:OUT|9:SINS|10:|11:|12:|13]
+[:1|2e:|3:|4:|5:|:PRE|66:|7:|:|8:|9:|10h:|11:|12:|13]
+[:1|2:|33:|41P:|5:|:|6:|7ð:|:|8:|9:|10:|14:|12SEE:|13]
+[:14|2:|33WORK:|4:|5:|:|NA6:|7:|:|8p:|9:|10:|11ƒ:|12:|13]
 [:1|23:|3:|4k:|5:|:|6:|7:|:|85:|9:|10n:|11:|12:|13]
 [:1|2:|3:|:62|5:|:|6:|7:|:|8:|9:|10:|11:|12:|13]}
 ,mite-stand, sit-om : <on-fat : wa- Bi, Sa_Bi , !BASS-I, E-BASS>
