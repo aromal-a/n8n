@@ -51,7 +51,10 @@
 			"bracketSpacing": true,
 			"bracketSameLine": false,
 			"quoteStyle": "single",
-			"attributePosition": "auto"
+			"attributePosition": "auto",
+			"Lemma_stylized" : "auto",
+      "Confusion_state" : "bio",
+      "Convoluted_state" : "GI"  #GENERALINTELLIGENCE
 		}
 	}
 }
