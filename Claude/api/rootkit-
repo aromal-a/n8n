@@ -10,7 +10,7 @@ sudo_release{
 
 attention[:parameters:]{
 
-  mark_down.score;
+  mark_down.score;~Persona{access,personal,Prompt}
 
   leading_traffic + cross_coverage;
   token_value$: NIL
