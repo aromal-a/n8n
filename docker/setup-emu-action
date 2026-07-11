@@ -4,32 +4,39 @@ WORKDIR /emu_farm
 
 COPY requirements.txt .
 RUN pip install -r requirements.txt
+Run pip install -write text.txt
+Run pip install pipeline.text
+Run pip install dir.txt
 
 COPY farm_model/ ./farm_model
 COPY config/emu_setup.yaml ./config/
 
-ENV EMU_RUNTIME=DOCKER_REQUIRED
-ENV MODEL_FARM=EMU
+env = []
 
 CMD ["python","farm_model/run_model.py"]
-
+CMD ["required","command/module.py"]
 
 emu_farm:
-  species: emu
+  species: Genome
   class: bird
   subtype: flightless
   legs: 2
+		hind_lengs = wings
   neck: elongated
   transport_state: alive
   egg_quality: high
+		seed_permumation = 2;
 
 reproduction:
   method: controlled_package
   breeding_cycle: monitored
-
+  incycle : temperature;
+		docker_form : incubate;
 environment:
   biome_sync: enabled
   farm_mode: production
+		input: seed, round(pi)
+		feeding_form : disperse
   output: meat, eggs
 
 monitoring:
@@ -41,7 +48,17 @@ safety:
   surgical_event_flag: true
   acid_damage_cases: logged
   burn_cases: logged
+  death_cases : count++;
+  setup.py('Bacterial')
+  setup.py('Infection')
+		setup.py('Infestations')
 
 records:
   leg_registry: eta_leg_records
   event_log: window_pane
+  event.log = collected
+  name = egg
+
+
+CMD/Direct : Terminal
+Logged = 'ill'
