@@ -912,6 +912,24 @@ electro_[Rotor] ,
 
 Technical : rebutary - [Valmiki - > "MADATHIL-AATTI- ENiKK_ VECHEKKUARN _ VANNAPPO_ NINNE KANDILLA"]:{
 
+def Book_Preservation():
+							Book on OCR:Scanning;
+       Collected_State;
+       Collected_Price;
+							Bulk_Price;
+                def Careful_Scanning(){
+                 Books.cover : ~['Preservation-guide' , OCR_SCANNING_GUIDE]
+																	slower-method : <Hand by hand> : <Robotic.glass> [Scanner.resolve('crease')]
+																	[OCR-Scanner : 'On page' , ~Bind-cutting] : <Several.['OCR' , Means_Parallel : 'Processing']>
+                 Collect : 'already-Destroyed' <Repair : 'Bindings'>[mini-library] => alt = 'donate'
+
+                 METHODS TO PRESERVE : 'OFFLOAD: ''PAGES' : 'AFTER-SCANNING : 'BIND + REPAIR(TORN-PAGES)'
+               	 PRESS : COPY~FLAG:'LANGUAGES' : 'SAME -> SIMILARITY WITH VERSION CHANGED' : 'ADDED-PROLOGUES' : 'MAIN : INK-FORMS'
+                 calligraphy -- [[torn , missing] -> BootStrap.serail[No ,  Regenerate]]
+
+
+
+																}
 
 
 
@@ -1048,40 +1066,42 @@ export function Doc(): boolean {
 }
 
 export function direct_Wi_Fi_internet_check(): string {
-  // direct: Wi-Fi.internet_check()
-  // return token;
+  direct: Wi-Fi.internet_check()
+  return token;
   return "token";
 }
 
 export function sum_range_retro_doc_his(): number {
-  // sum_range(retro/doc_his)
+sum_range(retro/doc_his)
   return 0;
 }
 
 export function sum_num_g_range_tune_in(): number {
-  // sum_num : g_range(tune_in?)
+sum_num : g_range(tune_in?)
   return 0;
 }
 
+export function Book_Preservation() : Serial_No{
+return  'Not-Binded' , 'Binded';
+}
+
 export function ideo_paths_config_$(): string {
-  // ideo:paths/config/$;
+ ideo:paths/config/$;
   return "paths/config/$";
 }
 
 export function trope_value_avoid(): AnyObj {
-  // trope_value : avoid(...)
+trope_value : avoid(...)
   return {};
 }
 export function trope_value_avoid(): AnyObj {
-  // trope_value : sombroid(...)
-
+  rope_value : sombroid(...)
+{
 		podoshoneshans
-   vasolite hunger
-   candle dinnelight
-  return {'verse'
-           'major-deminine', ninima-nisa'
-};
-}
+  vasoline hunger
+  candle dinnerlight
+  return {'verse','major-domain; , Alt[AI]};
+}}
 
 export function Double_tap(): void {
   /*
@@ -1169,7 +1189,8 @@ export function run(): AnyObj {
   INTERVALS();
   SHIBUYA_ad_markers();
   Dedicated_coughs();
-	surf_labor() #-p(.residue){keep_clean}with{dial}
+	 surf_labor() #-p(.residue){keep_clean}with{dial};
+  Book_Preservation()
 
   return identity({ token, ok: true });
 }
