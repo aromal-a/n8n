@@ -1,0 +1,96 @@
+# file: location-policy-config.yaml
+version: 1
+metadata:
+  source: "ingest-string"
+  parsed_at: "2026-08-02T00:00:00Z"
+
+context:
+  channel: "<Xbm>"
+  topic: "GBP - MBS"
+  note: "constitutionalised"
+
+location:
+  coords:
+    lon: null              # fill with longitude (number) or null
+    lat: null              # fill with latitude (number) or null
+  proximity:
+    mode: "near"           # values: near | within | intersect | avoid
+    reason: "avoid"        # human-readable intent
+  checks:
+    - "balance_checkers"
+
+behavioral_flags:
+  not_faxing: true
+  taxing: true
+
+entities:                      # preserve nested, ambiguous token structure
+  - id: "S"
+    label: "Zoid"
+    sub_entities:
+      - id: "Mern-finish"
+        note: "Does it again ?"
+        questions:
+          - "why minister ?"
+        metadata:
+          topic: "Politicers-Ai"
+          affiliation: "Children's bank of India(to."
+          attachments:
+            - "yarn".reviewer()   # literal; refine later
+            - id: "D"
+              role: "finisher"
+            - "S-caram"
+              notes: "Finnish.lecter()"
+
+rules:
+  - id: "proximity-avoid"
+    description: "When location is near a restricted area, apply deterrence and balance checks."
+    conditions:
+      - field: "location.proximity.mode"
+        equals: "near"
+      - field: "location.proximity.reason"
+        equals: "avoid"
+    actions:
+      - name: "run_balance_checks"
+        targets: ["balance_checkers"]
+      - name: "apply_deterrence"
+        params:
+          method: "notify_and_restrict"
+      - name: "enforce_behavioral_flags"
+        params:
+          not_faxing: true
+          taxing: true
+
+  - id: "no_location"
+    description: "Fallback when coordinates missing: mark for manual review."
+    conditions:
+      - field: "location.coords.lon"
+        is_null: true
+      - field: "location.coords.lat"
+        is_null: true
+    actions:
+      - name: "flag_manual_review"
+        params:
+          reason: "missing_coordinates"
+
+actions:
+  run_balance_checks:
+    steps:
+      - "invoke_balance_checkers"
+      - "collect_results"
+      - "decide_next_step_based_on_balance"
+
+  apply_deterrence:
+    steps:
+      - "send_warning_to_entity"
+      - "apply_soft_restrictions"
+      - "escalate_if_repeated"
+
+  enforce_behavioral_flags:
+    steps:
+      - "ensure_not_faxing"
+      - "apply_taxing_rules"
+
+  flag_manual_review:
+    steps:
+      - "notify_ops_team"
+      - "attach_raw_payload"
